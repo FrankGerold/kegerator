@@ -646,3 +646,89 @@ Processing by KegsController#show as HTML
 Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 0.2ms | Allocations: 5252)
 
 
+Started GET "/users/new" for 127.0.0.1 at 2019-12-03 17:32:24 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.erb within layouts/application
+  Rendered users/new.erb within layouts/application (Duration: 126.3ms | Allocations: 180692)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 171ms (Views: 151.7ms | ActiveRecord: 0.9ms | Allocations: 195735)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2019-12-03 17:34:10 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#new as HTML
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms | Allocations: 1368)
+
+
+  
+SyntaxError (/Users/fg/Development/mod2/week3/kegerator/app/models/user.rb:4: syntax error, unexpected tIDENTIFIER, expecting end
+...alidates [:name, :bio] presence: true
+...                       ^~~~~~~~):
+  
+app/models/user.rb:4: syntax error, unexpected tIDENTIFIER, expecting end
+app/models/user.rb:4: syntax error, unexpected tIDENTIFIER, expecting end
+app/models/user.rb:4: syntax error, unexpected tIDENTIFIER, expecting end
+app/controllers/users_controller.rb:8:in `new'
+Started GET "/users/new" for 127.0.0.1 at 2019-12-03 17:34:27 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#new as HTML
+  Rendering users/new.erb within layouts/application
+  Rendered users/new.erb within layouts/application (Duration: 118.8ms | Allocations: 180470)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 146ms (Views: 138.3ms | ActiveRecord: 0.5ms | Allocations: 194225)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-12-03 17:34:41 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by UsersController#create as JS
+  Parameters: {"authenticity_token"=>"eejkbiwrtWgI2M0kAwf8N0Nwa2HVIP7CBFXnIWZRd7f9BW+BFyEswgJ0vY2cRdgZYJuz5hqj8HlzCzq9IH+HLA==", "user"=>{"name"=>"", "bio"=>""}, "commit"=>"Create User"}
+Redirected to http://localhost:3000/users/new
+Completed 200 OK in 9ms (ActiveRecord: 0.5ms | Allocations: 6909)
+
+
+Started GET "/users/new" for 127.0.0.1 at 2019-12-03 17:34:41 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.erb within layouts/application
+  Rendered users/new.erb within layouts/application (Duration: 0.9ms | Allocations: 630)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.6ms | ActiveRecord: 0.0ms | Allocations: 4902)
+
+
+Started POST "/users" for 127.0.0.1 at 2019-12-03 17:34:49 -0500
+Processing by UsersController#create as JS
+  Parameters: {"authenticity_token"=>"FYT2c+xPVkSaHxOoHj0zdlOIX8DfVlzk05/c49G7fU66rpJGsx6uIwElVrt4mdVULkWLW0fa4xU2M4N0kbdcjQ==", "user"=>{"name"=>"nice", "bio"=>"works"}, "commit"=>"Create User"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "nice"], ["bio", "works"], ["created_at", "2019-12-03 22:34:49.067392"], ["updated_at", "2019-12-03 22:34:49.067392"]]
+  ↳ app/controllers/users_controller.rb:13:in `create'
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:13:in `create'
+Redirected to http://localhost:3000/users/23
+Completed 200 OK in 5ms (ActiveRecord: 1.5ms | Allocations: 2832)
+
+
+Started GET "/users/23" for 127.0.0.1 at 2019-12-03 17:34:49 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"23"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:50:in `find_user'
+  Rendering users/show.erb within layouts/application
+  Rendered users/show.erb within layouts/application (Duration: 244.4ms | Allocations: 149951)
+Completed 500 Internal Server Error in 247ms (ActiveRecord: 0.2ms | Allocations: 151487)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user' for #<#<Class:0x00007fbd380cb6b8>:0x00007fbd34dd9d90>
+Did you mean?  @user):
+    1: <h1><%= @user.name %></h1>
+    2: <h3><%= @user.bio %></h3>
+    3: 
+    4: <% user.cups.each do |cup| %>
+    5:   <%= cup.keg.name %><br>
+    6:   <%= cup.rating %>
+    7: 
+  
+app/views/users/show.erb:4
