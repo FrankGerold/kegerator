@@ -37,35 +37,12 @@ Migrating to CreateKegFloors (20191203194623)
   [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
   [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-<<<<<<< HEAD
-Started GET "/" for 127.0.0.1 at 2019-12-03 15:42:00 -0500
-  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
-  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Processing by Rails::WelcomeController#index as HTML
-  Rendering /Users/fg/.rvm/gems/ruby-2.6.1/gems/railties-6.0.1/lib/rails/templates/rails/welcome/index.html.erb
-  Rendered /Users/fg/.rvm/gems/ruby-2.6.1/gems/railties-6.0.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 6.9ms | Allocations: 482)
-Completed 200 OK in 20ms (Views: 13.0ms | ActiveRecord: 0.0ms | Allocations: 2812)
-
-
-Started GET "/users" for 127.0.0.1 at 2019-12-03 15:42:02 -0500
-Processing by UsersController#index as HTML
-  Rendering users/index.erb within layouts/application
-  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
-  ↳ app/views/users/index.erb:3
-  Rendered users/index.erb within layouts/application (Duration: 2.4ms | Allocations: 1098)
-[Webpacker] Compiling...
-[Webpacker] Compiled all packs in /Users/fg/Development/mod2/week3/kegerator/public/packs
-[Webpacker] Hash: 53154d7baad00c6a1252
-Version: webpack 4.41.2
-Time: 1433ms
-Built at: 12/03/2019 3:42:05 PM
-=======
 Started GET "/kegs/index" for 127.0.0.1 at 2019-12-03 15:43:43 -0500
   [1m[35m (4.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
   [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  
+
 AbstractController::ActionNotFound (The action 'show' could not be found for KegsController):
-  
+
 actionpack (6.0.1) lib/abstract_controller/base.rb:131:in `process'
 actionview (6.0.1) lib/action_view/rendering.rb:39:in `process'
 actionpack (6.0.1) lib/action_controller/metal.rb:191:in `dispatch'
@@ -127,9 +104,9 @@ Processing by KegsController#show as HTML
 Completed 406 Not Acceptable in 10ms (ActiveRecord: 0.0ms | Allocations: 1934)
 
 
-  
+
 ActionController::MissingExactTemplate (KegsController#show is missing a template for request formats: text/html):
-  
+
 actionpack (6.0.1) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
 actionpack (6.0.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
 actionpack (6.0.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
@@ -211,11 +188,10 @@ Processing by KegsController#new as HTML
 Version: webpack 4.41.2
 Time: 1342ms
 Built at: 12/03/2019 3:44:25 PM
->>>>>>> jaboi
                                      Asset       Size       Chunks                         Chunk Names
     js/application-0b67a3cc2fcde6055024.js    124 KiB  application  [emitted] [immutable]  application
 js/application-0b67a3cc2fcde6055024.js.map    139 KiB  application  [emitted] [dev]        application
-                             manifest.json  364 bytes               [emitted]              
+                             manifest.json  364 bytes               [emitted]
 Entrypoint application = js/application-0b67a3cc2fcde6055024.js js/application-0b67a3cc2fcde6055024.js.map
 [./app/javascript/channels sync recursive _channel\.js$] ./app/javascript/channels sync _channel\.js$ 160 bytes {application} [built]
 [./app/javascript/channels/index.js] 211 bytes {application} [built]
@@ -223,7 +199,6 @@ Entrypoint application = js/application-0b67a3cc2fcde6055024.js js/application-0
 [./node_modules/webpack/buildin/module.js] (webpack)/buildin/module.js 552 bytes {application} [built]
     + 3 hidden modules
 
-<<<<<<< HEAD
 Completed 200 OK in 3085ms (Views: 3070.8ms | ActiveRecord: 0.4ms | Allocations: 35550)
 
 
@@ -296,8 +271,235 @@ Processing by UsersController#show as HTML
 Completed 500 Internal Server Error in 228ms (ActiveRecord: 0.1ms | Allocations: 151364)
 
 
-  
+
 ActionView::Template::Error (undefined local variable or method `user' for #<#<Class:0x00007fe506d9d170>:0x00007fe506da7800>
+Did you mean?  @user):
+    1: <h1><%= @user.name %></h1>
+    2: <h3><%= @user.bio %></h3>
+    3:
+    4: <% user.cups.each do |cup| %>
+    5:   <%= cup.keg.name %><br>
+    6:   <%= cup.rating %>
+    7:
+
+app/views/users/show.erb:4
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Luke Skywalker"], ["bio", "Koona t'chuta Solo? (Going somewhere Solo?)"], ["created_at", "2019-12-03 21:30:58.613816"], ["updated_at", "2019-12-03 21:30:58.613816"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mKeg Create (0.2ms)[0m  [1m[32mINSERT INTO "kegs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Yellow Leader"], ["created_at", "2019-12-03 21:30:58.623232"], ["updated_at", "2019-12-03 21:30:58.623232"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFloor Create (0.2ms)[0m  [1m[32mINSERT INTO "floors" ("building", "floor_number", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["building", "Jakku"], ["floor_number", "10"], ["created_at", "2019-12-03 21:30:58.630979"], ["updated_at", "2019-12-03 21:30:58.630979"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Yoda"], ["bio", "In my experience there is no such thing as luck."], ["created_at", "2019-12-03 21:30:58.634036"], ["updated_at", "2019-12-03 21:30:58.634036"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mKeg Create (0.4ms)[0m  [1m[32mINSERT INTO "kegs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Gray Leader"], ["created_at", "2019-12-03 21:30:58.637575"], ["updated_at", "2019-12-03 21:30:58.637575"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFloor Create (0.5ms)[0m  [1m[32mINSERT INTO "floors" ("building", "floor_number", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["building", "Dagobah"], ["floor_number", "1"], ["created_at", "2019-12-03 21:30:58.642510"], ["updated_at", "2019-12-03 21:30:58.642510"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Anakin Skywalker"], ["bio", "Droid, please!"], ["created_at", "2019-12-03 21:30:58.648015"], ["updated_at", "2019-12-03 21:30:58.648015"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mKeg Create (0.5ms)[0m  [1m[32mINSERT INTO "kegs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Black 9"], ["created_at", "2019-12-03 21:30:58.652989"], ["updated_at", "2019-12-03 21:30:58.652989"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFloor Create (0.3ms)[0m  [1m[32mINSERT INTO "floors" ("building", "floor_number", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["building", "Dathomir"], ["floor_number", "2"], ["created_at", "2019-12-03 21:30:58.661247"], ["updated_at", "2019-12-03 21:30:58.661247"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Lando Calrissian"], ["bio", "You will remove these restraints and leave this cell with the door open."], ["created_at", "2019-12-03 21:30:58.664701"], ["updated_at", "2019-12-03 21:30:58.664701"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mKeg Create (0.2ms)[0m  [1m[32mINSERT INTO "kegs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Phoenix 1"], ["created_at", "2019-12-03 21:30:58.667683"], ["updated_at", "2019-12-03 21:30:58.667683"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFloor Create (0.2ms)[0m  [1m[32mINSERT INTO "floors" ("building", "floor_number", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["building", "Cloud City"], ["floor_number", "3"], ["created_at", "2019-12-03 21:30:58.670464"], ["updated_at", "2019-12-03 21:30:58.670464"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Galen Erso"], ["bio", "How you doin' Chewbacca? Still hanging around with this loser?"], ["created_at", "2019-12-03 21:30:58.673238"], ["updated_at", "2019-12-03 21:30:58.673238"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mKeg Create (0.2ms)[0m  [1m[32mINSERT INTO "kegs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Gray Leader"], ["created_at", "2019-12-03 21:30:58.676069"], ["updated_at", "2019-12-03 21:30:58.676069"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFloor Create (0.2ms)[0m  [1m[32mINSERT INTO "floors" ("building", "floor_number", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["building", "Ryloth"], ["floor_number", "5"], ["created_at", "2019-12-03 21:30:58.678848"], ["updated_at", "2019-12-03 21:30:58.678848"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Mon Mothma"], ["bio", "Ani? My goodness, you've grown."], ["created_at", "2019-12-03 21:30:58.681659"], ["updated_at", "2019-12-03 21:30:58.681659"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mKeg Create (0.2ms)[0m  [1m[32mINSERT INTO "kegs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Gray Leader"], ["created_at", "2019-12-03 21:30:58.684466"], ["updated_at", "2019-12-03 21:30:58.684466"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFloor Create (0.3ms)[0m  [1m[32mINSERT INTO "floors" ("building", "floor_number", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["building", "Jakku"], ["floor_number", "3"], ["created_at", "2019-12-03 21:30:58.711344"], ["updated_at", "2019-12-03 21:30:58.711344"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Asajj Ventress"], ["bio", "I suggest a new strategy, R2. Let the Wookiee win."], ["created_at", "2019-12-03 21:30:58.714653"], ["updated_at", "2019-12-03 21:30:58.714653"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mKeg Create (0.2ms)[0m  [1m[32mINSERT INTO "kegs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Blue Leader"], ["created_at", "2019-12-03 21:30:58.717501"], ["updated_at", "2019-12-03 21:30:58.717501"]]
+  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFloor Create (0.2ms)[0m  [1m[32mINSERT INTO "floors" ("building", "floor_number", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["building", "Ahch-To"], ["floor_number", "6"], ["created_at", "2019-12-03 21:30:58.720821"], ["updated_at", "2019-12-03 21:30:58.720821"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Galen Erso"], ["bio", "Twice the pride, double the fall."], ["created_at", "2019-12-03 21:30:58.723620"], ["updated_at", "2019-12-03 21:30:58.723620"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mKeg Create (0.2ms)[0m  [1m[32mINSERT INTO "kegs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Red Leader"], ["created_at", "2019-12-03 21:30:58.726420"], ["updated_at", "2019-12-03 21:30:58.726420"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFloor Create (0.2ms)[0m  [1m[32mINSERT INTO "floors" ("building", "floor_number", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["building", "DQar"], ["floor_number", "4"], ["created_at", "2019-12-03 21:30:58.729210"], ["updated_at", "2019-12-03 21:30:58.729210"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Ki-Adi-Mundi"], ["bio", "I will start my operations here, and pull the rebels apart piece by piece. They'll be the architects of their own destruction."], ["created_at", "2019-12-03 21:30:58.732032"], ["updated_at", "2019-12-03 21:30:58.732032"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mKeg Create (0.2ms)[0m  [1m[32mINSERT INTO "kegs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Yellow Leader"], ["created_at", "2019-12-03 21:30:58.734798"], ["updated_at", "2019-12-03 21:30:58.734798"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFloor Create (0.5ms)[0m  [1m[32mINSERT INTO "floors" ("building", "floor_number", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["building", "Scarif"], ["floor_number", "10"], ["created_at", "2019-12-03 21:30:58.738838"], ["updated_at", "2019-12-03 21:30:58.738838"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Grand Moff Tarkin"], ["bio", "You're smarter than a tree, aren't you?"], ["created_at", "2019-12-03 21:30:58.744024"], ["updated_at", "2019-12-03 21:30:58.744024"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mKeg Create (0.5ms)[0m  [1m[32mINSERT INTO "kegs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Black Leader"], ["created_at", "2019-12-03 21:30:58.749286"], ["updated_at", "2019-12-03 21:30:58.749286"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFloor Create (0.5ms)[0m  [1m[32mINSERT INTO "floors" ("building", "floor_number", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["building", "Kashyyyk"], ["floor_number", "2"], ["created_at", "2019-12-03 21:30:58.754613"], ["updated_at", "2019-12-03 21:30:58.754613"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Leia Organa"], ["bio", "You're smarter than a tree, aren't you?"], ["created_at", "2019-12-03 21:30:58.759228"], ["updated_at", "2019-12-03 21:30:58.759228"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mKeg Create (0.2ms)[0m  [1m[32mINSERT INTO "kegs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Rogue Leader"], ["created_at", "2019-12-03 21:30:58.762165"], ["updated_at", "2019-12-03 21:30:58.762165"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFloor Create (0.2ms)[0m  [1m[32mINSERT INTO "floors" ("building", "floor_number", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["building", "Hoth"], ["floor_number", "5"], ["created_at", "2019-12-03 21:30:58.764903"], ["updated_at", "2019-12-03 21:30:58.764903"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Nute Gunray"], ["bio", "How you doin' Chewbacca? Still hanging around with this loser?"], ["created_at", "2019-12-03 21:30:58.767723"], ["updated_at", "2019-12-03 21:30:58.767723"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mKeg Create (0.2ms)[0m  [1m[32mINSERT INTO "kegs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Blue 4"], ["created_at", "2019-12-03 21:30:58.771467"], ["updated_at", "2019-12-03 21:30:58.771467"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFloor Create (0.2ms)[0m  [1m[32mINSERT INTO "floors" ("building", "floor_number", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["building", "Hoth"], ["floor_number", "6"], ["created_at", "2019-12-03 21:30:58.774723"], ["updated_at", "2019-12-03 21:30:58.774723"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Jabba the Hutt"], ["bio", "Boompa kom bok nee aht am bompah. (He may only take your ship.)"], ["created_at", "2019-12-03 21:30:58.778062"], ["updated_at", "2019-12-03 21:30:58.778062"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mKeg Create (0.2ms)[0m  [1m[32mINSERT INTO "kegs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Blue Leader"], ["created_at", "2019-12-03 21:30:58.781382"], ["updated_at", "2019-12-03 21:30:58.781382"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFloor Create (0.2ms)[0m  [1m[32mINSERT INTO "floors" ("building", "floor_number", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["building", "Mustafar"], ["floor_number", "4"], ["created_at", "2019-12-03 21:30:58.784599"], ["updated_at", "2019-12-03 21:30:58.784599"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Supreme Leader Snoke"], ["bio", "Governor Tarkin, I should've expected to find you holding Vader's leash. I recognized your foul stench when I was brought on board."], ["created_at", "2019-12-03 21:30:58.789447"], ["updated_at", "2019-12-03 21:30:58.789447"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mKeg Create (0.3ms)[0m  [1m[32mINSERT INTO "kegs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Rogue 3"], ["created_at", "2019-12-03 21:30:58.795032"], ["updated_at", "2019-12-03 21:30:58.795032"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFloor Create (0.5ms)[0m  [1m[32mINSERT INTO "floors" ("building", "floor_number", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["building", "Hosnian Prime"], ["floor_number", "2"], ["created_at", "2019-12-03 21:30:58.800027"], ["updated_at", "2019-12-03 21:30:58.800027"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Poe Dameron"], ["bio", "The Shield is down! Commence attack on the Death star's main reactor."], ["created_at", "2019-12-03 21:30:58.805978"], ["updated_at", "2019-12-03 21:30:58.805978"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mKeg Create (0.2ms)[0m  [1m[32mINSERT INTO "kegs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Blue 1"], ["created_at", "2019-12-03 21:30:58.810397"], ["updated_at", "2019-12-03 21:30:58.810397"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFloor Create (0.2ms)[0m  [1m[32mINSERT INTO "floors" ("building", "floor_number", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["building", "Onderon"], ["floor_number", "10"], ["created_at", "2019-12-03 21:30:58.813824"], ["updated_at", "2019-12-03 21:30:58.813824"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Savage Opress"], ["bio", "Give in to your anger. With each passing moment you make yourself more my servant."], ["created_at", "2019-12-03 21:30:58.816838"], ["updated_at", "2019-12-03 21:30:58.816838"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mKeg Create (0.2ms)[0m  [1m[32mINSERT INTO "kegs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Black Leader"], ["created_at", "2019-12-03 21:30:58.819584"], ["updated_at", "2019-12-03 21:30:58.819584"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFloor Create (0.2ms)[0m  [1m[32mINSERT INTO "floors" ("building", "floor_number", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["building", "Lothal"], ["floor_number", "5"], ["created_at", "2019-12-03 21:30:58.822297"], ["updated_at", "2019-12-03 21:30:58.822297"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Finn"], ["bio", "Twice the pride, double the fall."], ["created_at", "2019-12-03 21:30:58.825088"], ["updated_at", "2019-12-03 21:30:58.825088"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mKeg Create (0.2ms)[0m  [1m[32mINSERT INTO "kegs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Gold Leader"], ["created_at", "2019-12-03 21:30:58.827970"], ["updated_at", "2019-12-03 21:30:58.827970"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFloor Create (0.2ms)[0m  [1m[32mINSERT INTO "floors" ("building", "floor_number", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["building", "Starkiller Base"], ["floor_number", "5"], ["created_at", "2019-12-03 21:30:58.830715"], ["updated_at", "2019-12-03 21:30:58.830715"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Grand Admiral Thrawn"], ["bio", "Wars not make one great."], ["created_at", "2019-12-03 21:30:58.833484"], ["updated_at", "2019-12-03 21:30:58.833484"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mKeg Create (0.3ms)[0m  [1m[32mINSERT INTO "kegs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Rogue 7"], ["created_at", "2019-12-03 21:30:58.836585"], ["updated_at", "2019-12-03 21:30:58.836585"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFloor Create (0.2ms)[0m  [1m[32mINSERT INTO "floors" ("building", "floor_number", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["building", "Jakku"], ["floor_number", "6"], ["created_at", "2019-12-03 21:30:58.874572"], ["updated_at", "2019-12-03 21:30:58.874572"]]
+  [1m[35m (0.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.2ms)[0m  [1m[32mINSERT INTO "users" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Ki-Adi-Mundi"], ["bio", "Then our worst fears have been realized. We must move quickly if the Jedi Order is to survive."], ["created_at", "2019-12-03 21:30:58.877696"], ["updated_at", "2019-12-03 21:30:58.877696"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mKeg Create (0.2ms)[0m  [1m[32mINSERT INTO "kegs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Red 7"], ["created_at", "2019-12-03 21:30:58.880903"], ["updated_at", "2019-12-03 21:30:58.880903"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFloor Create (0.2ms)[0m  [1m[32mINSERT INTO "floors" ("building", "floor_number", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["building", "Sullust"], ["floor_number", "10"], ["created_at", "2019-12-03 21:30:58.883994"], ["updated_at", "2019-12-03 21:30:58.883994"]]
+  [1m[35m (0.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Rose Tico"], ["bio", "Careful, Ren, that your personal interests not interfere with orders from Leader Snoke."], ["created_at", "2019-12-03 21:30:58.887720"], ["updated_at", "2019-12-03 21:30:58.887720"]]
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mKeg Create (0.5ms)[0m  [1m[32mINSERT INTO "kegs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Blue 6"], ["created_at", "2019-12-03 21:30:58.893671"], ["updated_at", "2019-12-03 21:30:58.893671"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mFloor Create (0.4ms)[0m  [1m[32mINSERT INTO "floors" ("building", "floor_number", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["building", "Mygeeto"], ["floor_number", "8"], ["created_at", "2019-12-03 21:30:58.899452"], ["updated_at", "2019-12-03 21:30:58.899452"]]
+  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/users" for 127.0.0.1 at 2019-12-03 16:31:12 -0500
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by UsersController#index as HTML
+  Rendering users/index.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.erb:3
+  Rendered users/index.erb within layouts/application (Duration: 23.3ms | Allocations: 6047)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 90ms (Views: 73.5ms | ActiveRecord: 1.7ms | Allocations: 17667)
+
+
+Started GET "/users" for 127.0.0.1 at 2019-12-03 16:31:13 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.erb:3
+  Rendered users/index.erb within layouts/application (Duration: 5.3ms | Allocations: 2310)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 13.1ms | ActiveRecord: 0.2ms | Allocations: 6913)
+
+
+Started GET "/users/2" for 127.0.0.1 at 2019-12-03 16:31:16 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `show'
+  Rendering users/show.erb within layouts/application
+  Rendered users/show.erb within layouts/application (Duration: 191.2ms | Allocations: 150243)
+Completed 500 Internal Server Error in 194ms (ActiveRecord: 0.2ms | Allocations: 151774)
+
+
+  
+ActionView::Template::Error (undefined local variable or method `user' for #<#<Class:0x00007fca69a828d0>:0x00007fca6b3a0970>
 Did you mean?  @user):
     1: <h1><%= @user.name %></h1>
     2: <h3><%= @user.bio %></h3>
@@ -308,582 +510,139 @@ Did you mean?  @user):
     7: 
   
 app/views/users/show.erb:4
-=======
-Completed 200 OK in 2876ms (Views: 2855.7ms | ActiveRecord: 2.5ms | Allocations: 42921)
-
-
-Started GET "/kegs/index" for 127.0.0.1 at 2019-12-03 15:44:42 -0500
-Processing by KegsController#show as HTML
-  Parameters: {"id"=>"index"}
-Completed 406 Not Acceptable in 1ms (ActiveRecord: 0.0ms | Allocations: 643)
-
-
-  
-ActionController::MissingExactTemplate (KegsController#show is missing a template for request formats: text/html):
-  
-actionpack (6.0.1) lib/action_controller/metal/implicit_render.rb:45:in `default_render'
-actionpack (6.0.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `block in send_action'
-actionpack (6.0.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `tap'
-actionpack (6.0.1) lib/action_controller/metal/basic_implicit_render.rb:6:in `send_action'
-actionpack (6.0.1) lib/abstract_controller/base.rb:196:in `process_action'
-actionpack (6.0.1) lib/action_controller/metal/rendering.rb:30:in `process_action'
-actionpack (6.0.1) lib/abstract_controller/callbacks.rb:42:in `block in process_action'
-activesupport (6.0.1) lib/active_support/callbacks.rb:135:in `run_callbacks'
-actionpack (6.0.1) lib/abstract_controller/callbacks.rb:41:in `process_action'
-actionpack (6.0.1) lib/action_controller/metal/rescue.rb:22:in `process_action'
-actionpack (6.0.1) lib/action_controller/metal/instrumentation.rb:33:in `block in process_action'
-activesupport (6.0.1) lib/active_support/notifications.rb:180:in `block in instrument'
-activesupport (6.0.1) lib/active_support/notifications/instrumenter.rb:24:in `instrument'
-activesupport (6.0.1) lib/active_support/notifications.rb:180:in `instrument'
-actionpack (6.0.1) lib/action_controller/metal/instrumentation.rb:32:in `process_action'
-actionpack (6.0.1) lib/action_controller/metal/params_wrapper.rb:245:in `process_action'
-activerecord (6.0.1) lib/active_record/railties/controller_runtime.rb:27:in `process_action'
-actionpack (6.0.1) lib/abstract_controller/base.rb:136:in `process'
-actionview (6.0.1) lib/action_view/rendering.rb:39:in `process'
-actionpack (6.0.1) lib/action_controller/metal.rb:191:in `dispatch'
-actionpack (6.0.1) lib/action_controller/metal.rb:252:in `dispatch'
-actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:51:in `dispatch'
-actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:33:in `serve'
-actionpack (6.0.1) lib/action_dispatch/journey/router.rb:49:in `block in serve'
-actionpack (6.0.1) lib/action_dispatch/journey/router.rb:32:in `each'
-actionpack (6.0.1) lib/action_dispatch/journey/router.rb:32:in `serve'
-actionpack (6.0.1) lib/action_dispatch/routing/route_set.rb:837:in `call'
-rack (2.0.7) lib/rack/tempfile_reaper.rb:15:in `call'
-rack (2.0.7) lib/rack/etag.rb:25:in `call'
-rack (2.0.7) lib/rack/conditional_get.rb:25:in `call'
-rack (2.0.7) lib/rack/head.rb:12:in `call'
-actionpack (6.0.1) lib/action_dispatch/http/content_security_policy.rb:18:in `call'
-rack (2.0.7) lib/rack/session/abstract/id.rb:232:in `context'
-rack (2.0.7) lib/rack/session/abstract/id.rb:226:in `call'
-actionpack (6.0.1) lib/action_dispatch/middleware/cookies.rb:648:in `call'
-activerecord (6.0.1) lib/active_record/migration.rb:567:in `call'
-actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:27:in `block in call'
-activesupport (6.0.1) lib/active_support/callbacks.rb:101:in `run_callbacks'
-actionpack (6.0.1) lib/action_dispatch/middleware/callbacks.rb:26:in `call'
-actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (6.0.1) lib/action_dispatch/middleware/actionable_exceptions.rb:17:in `call'
-actionpack (6.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:32:in `call'
-web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
-web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
-web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
-web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
-actionpack (6.0.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
-railties (6.0.1) lib/rails/rack/logger.rb:38:in `call_app'
-railties (6.0.1) lib/rails/rack/logger.rb:26:in `block in call'
-activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
-activesupport (6.0.1) lib/active_support/tagged_logging.rb:28:in `tagged'
-activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `tagged'
-railties (6.0.1) lib/rails/rack/logger.rb:26:in `call'
-sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
-actionpack (6.0.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
-actionpack (6.0.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
-rack (2.0.7) lib/rack/method_override.rb:22:in `call'
-rack (2.0.7) lib/rack/runtime.rb:22:in `call'
-activesupport (6.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
-actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
-actionpack (6.0.1) lib/action_dispatch/middleware/static.rb:126:in `call'
-rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
-actionpack (6.0.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
-webpacker (4.2.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
-rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
-railties (6.0.1) lib/rails/engine.rb:526:in `call'
-puma (4.3.0) lib/puma/configuration.rb:228:in `call'
-puma (4.3.0) lib/puma/server.rb:667:in `handle_request'
-puma (4.3.0) lib/puma/server.rb:470:in `process_client'
-puma (4.3.0) lib/puma/server.rb:328:in `block in run'
-puma (4.3.0) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
-Started GET "/kegs/index" for 127.0.0.1 at 2019-12-03 15:45:19 -0500
-Processing by KegsController#show as HTML
-  Parameters: {"id"=>"index"}
-  Rendering kegs/show.erb within layouts/application
-  Rendered kegs/show.erb within layouts/application (Duration: 0.3ms | Allocations: 72)
+Started GET "/users" for 127.0.0.1 at 2019-12-03 16:31:33 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.erb:3
+  Rendered users/index.erb within layouts/application (Duration: 1.9ms | Allocations: 2252)
 [Webpacker] Everything's up-to-date. Nothing to do
-Completed 200 OK in 13ms (Views: 10.4ms | ActiveRecord: 0.0ms | Allocations: 5040)
+Completed 200 OK in 7ms (Views: 6.4ms | ActiveRecord: 0.1ms | Allocations: 6387)
 
 
-Started GET "/kegs/index" for 127.0.0.1 at 2019-12-03 15:45:21 -0500
-  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
-Processing by KegsController#show as HTML
-  Parameters: {"id"=>"index"}
-  [1m[36mKeg Load (0.5ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
-  ↳ app/controllers/kegs_controller.rb:9:in `show'
-Completed 404 Not Found in 22ms (ActiveRecord: 1.1ms | Allocations: 4698)
-
-
-  
-ActiveRecord::RecordNotFound (Couldn't find Keg with 'id'=index):
-  
-app/controllers/kegs_controller.rb:9:in `show'
-Started GET "/kegs/index" for 127.0.0.1 at 2019-12-03 15:45:21 -0500
-Processing by KegsController#show as HTML
-  Parameters: {"id"=>"index"}
-  [1m[36mKeg Load (0.2ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
-  ↳ app/controllers/kegs_controller.rb:9:in `show'
-Completed 404 Not Found in 3ms (ActiveRecord: 0.2ms | Allocations: 1049)
-
-
-  
-ActiveRecord::RecordNotFound (Couldn't find Keg with 'id'=index):
-  
-app/controllers/kegs_controller.rb:9:in `show'
-Started GET "/kegs/index" for 127.0.0.1 at 2019-12-03 15:45:32 -0500
-  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
-Processing by KegsController#show as HTML
-  Parameters: {"id"=>"index"}
-  Rendering kegs/show.erb within layouts/application
-  Rendered kegs/show.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
+Started GET "/users/new" for 127.0.0.1 at 2019-12-03 16:31:35 -0500
+Processing by UsersController#new as HTML
+  Rendering users/new.erb within layouts/application
+  Rendered users/new.erb within layouts/application (Duration: 118.3ms | Allocations: 182613)
 [Webpacker] Everything's up-to-date. Nothing to do
-Completed 200 OK in 17ms (Views: 16.6ms | ActiveRecord: 0.0ms | Allocations: 4157)
+Completed 200 OK in 125ms (Views: 122.9ms | ActiveRecord: 0.0ms | Allocations: 186781)
 
 
-Started GET "/kegs/index" for 127.0.0.1 at 2019-12-03 15:45:36 -0500
-Processing by KegsController#show as HTML
-  Parameters: {"id"=>"index"}
-  Rendering kegs/show.erb within layouts/application
-  Rendered kegs/show.erb within layouts/application (Duration: 0.0ms | Allocations: 5)
-[Webpacker] Everything's up-to-date. Nothing to do
-Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms | Allocations: 4023)
+Started POST "/users" for 127.0.0.1 at 2019-12-03 16:31:40 -0500
+Processing by UsersController#create as JS
+  Parameters: {"authenticity_token"=>"RAO8PgDORTKBK8RfMEoGdgNE79Sb5Tb3Cy48bmakgUzrKdgLX5+9VRoRgUxW7uBUfok7TwNpiQbugmP5Jqigjw==", "user"=>{"name"=>"123", "bio"=>"420"}, "commit"=>"Create User"}
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "123"], ["bio", "420"], ["created_at", "2019-12-03 21:31:40.123025"], ["updated_at", "2019-12-03 21:31:40.123025"]]
+  ↳ app/controllers/users_controller.rb:12:in `create'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/users_controller.rb:12:in `create'
+Redirected to http://localhost:3000/users/22
+Completed 200 OK in 4ms (ActiveRecord: 1.1ms | Allocations: 2953)
 
 
-Started GET "/kegs/index" for 127.0.0.1 at 2019-12-03 15:45:40 -0500
-Processing by KegsController#show as HTML
-  Parameters: {"id"=>"index"}
-  Rendering kegs/show.erb within layouts/application
-  Rendered kegs/show.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
-[Webpacker] Everything's up-to-date. Nothing to do
-Completed 200 OK in 7ms (Views: 6.6ms | ActiveRecord: 0.0ms | Allocations: 4022)
-
-
-Started GET "/kegs/index" for 127.0.0.1 at 2019-12-03 15:45:40 -0500
-Processing by KegsController#show as HTML
-  Parameters: {"id"=>"index"}
-  Rendering kegs/show.erb within layouts/application
-  Rendered kegs/show.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
-[Webpacker] Everything's up-to-date. Nothing to do
-Completed 200 OK in 8ms (Views: 7.2ms | ActiveRecord: 0.0ms | Allocations: 4017)
-
-
-Started GET "/kegs/index" for 127.0.0.1 at 2019-12-03 15:45:41 -0500
-Processing by KegsController#show as HTML
-  Parameters: {"id"=>"index"}
-  Rendering kegs/show.erb within layouts/application
-  Rendered kegs/show.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
-[Webpacker] Everything's up-to-date. Nothing to do
-Completed 200 OK in 20ms (Views: 19.3ms | ActiveRecord: 0.0ms | Allocations: 4021)
-
-
-Started GET "/kegs/index" for 127.0.0.1 at 2019-12-03 15:45:41 -0500
-Processing by KegsController#show as HTML
-  Parameters: {"id"=>"index"}
-  Rendering kegs/show.erb within layouts/application
-  Rendered kegs/show.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
-[Webpacker] Everything's up-to-date. Nothing to do
-Completed 200 OK in 18ms (Views: 16.2ms | ActiveRecord: 0.0ms | Allocations: 4017)
-
-
-Started GET "/kegs/index" for 127.0.0.1 at 2019-12-03 15:45:41 -0500
-Processing by KegsController#show as HTML
-  Parameters: {"id"=>"index"}
-  Rendering kegs/show.erb within layouts/application
-  Rendered kegs/show.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
-[Webpacker] Everything's up-to-date. Nothing to do
-Completed 200 OK in 18ms (Views: 16.8ms | ActiveRecord: 0.0ms | Allocations: 4019)
-
-
-Started GET "/kegs/index" for 127.0.0.1 at 2019-12-03 15:45:41 -0500
-Processing by KegsController#show as HTML
-  Parameters: {"id"=>"index"}
-  Rendering kegs/show.erb within layouts/application
-  Rendered kegs/show.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
-[Webpacker] Everything's up-to-date. Nothing to do
-Completed 200 OK in 13ms (Views: 12.6ms | ActiveRecord: 0.0ms | Allocations: 4019)
-
-
-Started GET "/kegs/index" for 127.0.0.1 at 2019-12-03 15:45:41 -0500
-Processing by KegsController#show as HTML
-  Parameters: {"id"=>"index"}
-  Rendering kegs/show.erb within layouts/application
-  Rendered kegs/show.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
-[Webpacker] Everything's up-to-date. Nothing to do
-Completed 200 OK in 28ms (Views: 26.3ms | ActiveRecord: 0.0ms | Allocations: 4027)
-
-
-Started GET "/kegs/index" for 127.0.0.1 at 2019-12-03 15:45:50 -0500
-Processing by KegsController#show as HTML
-  Parameters: {"id"=>"index"}
-  Rendering kegs/show.erb within layouts/application
-  Rendered kegs/show.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
-[Webpacker] Everything's up-to-date. Nothing to do
-Completed 200 OK in 8ms (Views: 7.7ms | ActiveRecord: 0.0ms | Allocations: 4028)
-
-
-Started GET "/kegs/index" for 127.0.0.1 at 2019-12-03 15:45:51 -0500
-Processing by KegsController#show as HTML
-  Parameters: {"id"=>"index"}
-  Rendering kegs/show.erb within layouts/application
-  Rendered kegs/show.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
-[Webpacker] Everything's up-to-date. Nothing to do
-Completed 200 OK in 9ms (Views: 8.5ms | ActiveRecord: 0.0ms | Allocations: 4022)
-
-
-Started GET "/kegs/index" for 127.0.0.1 at 2019-12-03 15:45:51 -0500
-Processing by KegsController#show as HTML
-  Parameters: {"id"=>"index"}
-  Rendering kegs/show.erb within layouts/application
-  Rendered kegs/show.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
-[Webpacker] Everything's up-to-date. Nothing to do
-Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 4020)
-
-
-Started GET "/kegs/index" for 127.0.0.1 at 2019-12-03 15:45:51 -0500
-Processing by KegsController#show as HTML
-  Parameters: {"id"=>"index"}
-  Rendering kegs/show.erb within layouts/application
-  Rendered kegs/show.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
-[Webpacker] Everything's up-to-date. Nothing to do
-Completed 200 OK in 7ms (Views: 6.5ms | ActiveRecord: 0.0ms | Allocations: 4023)
-
-
-Started GET "/kegs/index" for 127.0.0.1 at 2019-12-03 15:45:51 -0500
-Processing by KegsController#show as HTML
-  Parameters: {"id"=>"index"}
-  Rendering kegs/show.erb within layouts/application
-  Rendered kegs/show.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
-[Webpacker] Everything's up-to-date. Nothing to do
-Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.0ms | Allocations: 4015)
-
-
-Started GET "/kegs/index" for 127.0.0.1 at 2019-12-03 15:45:51 -0500
-Processing by KegsController#show as HTML
-  Parameters: {"id"=>"index"}
-  Rendering kegs/show.erb within layouts/application
-  Rendered kegs/show.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
-[Webpacker] Everything's up-to-date. Nothing to do
-Completed 200 OK in 7ms (Views: 6.1ms | ActiveRecord: 0.0ms | Allocations: 4016)
-
-
-Started GET "/kegs/index" for 127.0.0.1 at 2019-12-03 15:45:51 -0500
-Processing by KegsController#show as HTML
-  Parameters: {"id"=>"index"}
-  Rendering kegs/show.erb within layouts/application
-  Rendered kegs/show.erb within layouts/application (Duration: 0.0ms | Allocations: 4)
-[Webpacker] Everything's up-to-date. Nothing to do
-Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.0ms | Allocations: 4016)
-
-
-Started GET "/kegs/index" for 127.0.0.1 at 2019-12-03 15:45:52 -0500
-Processing by KegsController#show as HTML
-  Parameters: {"id"=>"index"}
-  Rendering kegs/show.erb within layouts/application
-  Rendered kegs/show.erb within layouts/application (Duration: 0.1ms | Allocations: 4)
-[Webpacker] Everything's up-to-date. Nothing to do
-Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.0ms | Allocations: 4018)
-
-
-Started GET "/kegs/index" for 127.0.0.1 at 2019-12-03 15:47:48 -0500
-  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
-  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Processing by KegsController#show as HTML
-  Parameters: {"id"=>"index"}
-  [1m[36mKeg Load (0.2ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
-  ↳ app/controllers/kegs_controller.rb:9:in `show'
-Completed 404 Not Found in 21ms (ActiveRecord: 0.9ms | Allocations: 4863)
+Started GET "/users/22" for 127.0.0.1 at 2019-12-03 16:31:40 -0500
+Processing by UsersController#show as HTML
+  Parameters: {"id"=>"22"}
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users" WHERE "users"."id" = ? LIMIT ?[0m  [["id", 22], ["LIMIT", 1]]
+  ↳ app/controllers/users_controller.rb:17:in `show'
+  Rendering users/show.erb within layouts/application
+  Rendered users/show.erb within layouts/application (Duration: 230.1ms | Allocations: 149757)
+Completed 500 Internal Server Error in 231ms (ActiveRecord: 0.1ms | Allocations: 150718)
 
 
   
-ActiveRecord::RecordNotFound (Couldn't find Keg with 'id'=index):
+ActionView::Template::Error (undefined local variable or method `user' for #<#<Class:0x00007fca69a828d0>:0x00007fca701dc058>
+Did you mean?  @user):
+    1: <h1><%= @user.name %></h1>
+    2: <h3><%= @user.bio %></h3>
+    3: 
+    4: <% user.cups.each do |cup| %>
+    5:   <%= cup.keg.name %><br>
+    6:   <%= cup.rating %>
+    7: 
   
-app/controllers/kegs_controller.rb:9:in `show'
-Started GET "/kegs/index" for 127.0.0.1 at 2019-12-03 15:47:51 -0500
-Processing by KegsController#show as HTML
-  Parameters: {"id"=>"index"}
-  [1m[36mKeg Load (0.1ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
-  ↳ app/controllers/kegs_controller.rb:9:in `show'
-Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1099)
+app/views/users/show.erb:4
+Started GET "/users" for 127.0.0.1 at 2019-12-03 16:31:43 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.erb:3
+  Rendered users/index.erb within layouts/application (Duration: 2.1ms | Allocations: 2296)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.1ms | Allocations: 6384)
 
 
-  
-ActiveRecord::RecordNotFound (Couldn't find Keg with 'id'=index):
-  
-app/controllers/kegs_controller.rb:9:in `show'
-Started GET "/kegs/index" for 127.0.0.1 at 2019-12-03 15:49:24 -0500
-  [1m[35m (0.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
-  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Processing by KegsController#show as HTML
-  Parameters: {"id"=>"index"}
-  [1m[36mKeg Load (0.1ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
-  ↳ app/controllers/kegs_controller.rb:12:in `show'
-Completed 404 Not Found in 10ms (ActiveRecord: 0.6ms | Allocations: 4863)
+Started GET "/users" for 127.0.0.1 at 2019-12-03 16:31:43 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.erb:3
+  Rendered users/index.erb within layouts/application (Duration: 1.9ms | Allocations: 2293)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.8ms | ActiveRecord: 0.1ms | Allocations: 6379)
 
 
-  
-ActiveRecord::RecordNotFound (Couldn't find Keg with 'id'=index):
-  
-app/controllers/kegs_controller.rb:12:in `show'
-Started GET "/kegs/index" for 127.0.0.1 at 2019-12-03 15:49:26 -0500
-Processing by KegsController#show as HTML
-  Parameters: {"id"=>"index"}
-  [1m[36mKeg Load (0.1ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
-  ↳ app/controllers/kegs_controller.rb:12:in `show'
-Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1099)
+Started GET "/users" for 127.0.0.1 at 2019-12-03 16:31:44 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.erb:3
+  Rendered users/index.erb within layouts/application (Duration: 4.2ms | Allocations: 2293)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.2ms | Allocations: 6378)
 
 
-  
-ActiveRecord::RecordNotFound (Couldn't find Keg with 'id'=index):
-  
-app/controllers/kegs_controller.rb:12:in `show'
-Started GET "/kegs/index" for 127.0.0.1 at 2019-12-03 15:49:30 -0500
-Processing by KegsController#show as HTML
-  Parameters: {"id"=>"index"}
-  [1m[36mKeg Load (0.1ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
-  ↳ app/controllers/kegs_controller.rb:12:in `show'
-Completed 404 Not Found in 2ms (ActiveRecord: 0.1ms | Allocations: 1067)
+Started GET "/users" for 127.0.0.1 at 2019-12-03 16:31:50 -0500
+Processing by UsersController#index as HTML
+  Rendering users/index.erb within layouts/application
+  [1m[36mUser Load (0.1ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  ↳ app/views/users/index.erb:3
+  Rendered users/index.erb within layouts/application (Duration: 1.8ms | Allocations: 2293)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.1ms | Allocations: 6377)
 
 
-  
-ActiveRecord::RecordNotFound (Couldn't find Keg with 'id'=index):
-  
-app/controllers/kegs_controller.rb:12:in `show'
-Started GET "/kegs/index" for 127.0.0.1 at 2019-12-03 15:49:59 -0500
-Processing by KegsController#show as HTML
-  Parameters: {"id"=>"index"}
-  [1m[36mKeg Load (0.2ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
-  ↳ app/controllers/kegs_controller.rb:12:in `show'
-Completed 404 Not Found in 2ms (ActiveRecord: 0.2ms | Allocations: 1067)
+Started GET "/" for 127.0.0.1 at 2019-12-03 16:31:51 -0500
+Processing by Rails::WelcomeController#index as HTML
+  Rendering /Users/fg/.rvm/gems/ruby-2.6.1/gems/railties-6.0.1/lib/rails/templates/rails/welcome/index.html.erb
+  Rendered /Users/fg/.rvm/gems/ruby-2.6.1/gems/railties-6.0.1/lib/rails/templates/rails/welcome/index.html.erb (Duration: 3.9ms | Allocations: 197)
+Completed 200 OK in 6ms (Views: 4.3ms | ActiveRecord: 0.0ms | Allocations: 1000)
 
 
-  
-ActiveRecord::RecordNotFound (Couldn't find Keg with 'id'=index):
-  
-app/controllers/kegs_controller.rb:12:in `show'
-  [1m[35m (0.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
-  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
-  [1m[35m (0.0ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
-  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Started GET "/kegs/index" for 127.0.0.1 at 2019-12-03 15:50:56 -0500
-  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
-  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-Processing by KegsController#show as HTML
-  Parameters: {"id"=>"index"}
-  [1m[36mKeg Load (0.1ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", nil], ["LIMIT", 1]]
-  ↳ app/controllers/kegs_controller.rb:12:in `show'
-Completed 404 Not Found in 15ms (ActiveRecord: 0.8ms | Allocations: 4986)
-
-
-  
-ActiveRecord::RecordNotFound (Couldn't find Keg with 'id'=index):
-  
-app/controllers/kegs_controller.rb:12:in `show'
-Started GET "/kegs/" for 127.0.0.1 at 2019-12-03 15:51:00 -0500
+Started GET "/kegs" for 127.0.0.1 at 2019-12-03 16:31:52 -0500
 Processing by KegsController#index as HTML
   Rendering kegs/index.erb within layouts/application
-  [1m[36mKeg Load (0.5ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs"[0m
+  [1m[36mKeg Load (0.1ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs"[0m
   ↳ app/views/kegs/index.erb:4
-  Rendered kegs/index.erb within layouts/application (Duration: 2.0ms | Allocations: 745)
+  Rendered kegs/index.erb within layouts/application (Duration: 5.1ms | Allocations: 5398)
 [Webpacker] Everything's up-to-date. Nothing to do
-Completed 200 OK in 68ms (Views: 65.5ms | ActiveRecord: 0.5ms | Allocations: 9216)
+Completed 200 OK in 18ms (Views: 14.0ms | ActiveRecord: 0.4ms | Allocations: 13625)
 
 
-Started GET "/kegs/" for 127.0.0.1 at 2019-12-03 15:51:11 -0500
-Processing by KegsController#index as HTML
-  Rendering kegs/index.erb within layouts/application
-  [1m[36mKeg Load (0.2ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs"[0m
-  ↳ app/views/kegs/index.erb:4
-  Rendered kegs/index.erb within layouts/application (Duration: 1.4ms | Allocations: 566)
+Started GET "/kegs/7" for 127.0.0.1 at 2019-12-03 16:31:59 -0500
+Processing by KegsController#show as HTML
+  Parameters: {"id"=>"7"}
+  [1m[36mKeg Load (0.4ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 7], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:12:in `show'
+  Rendering kegs/show.erb within layouts/application
+  [1m[36mKegFloor Load (0.1ms)[0m  [1m[34mSELECT "keg_floors".* FROM "keg_floors" WHERE "keg_floors"."keg_id" = ?[0m  [["keg_id", 7]]
+  ↳ app/views/kegs/show.erb:5
+  Rendered kegs/show.erb within layouts/application (Duration: 20.8ms | Allocations: 7476)
 [Webpacker] Everything's up-to-date. Nothing to do
-Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.2ms | Allocations: 4620)
+Completed 200 OK in 29ms (Views: 25.5ms | ActiveRecord: 0.9ms | Allocations: 12227)
 
 
-  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
-  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
-  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
-  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mUser Create (2.8ms)[0m  [1m[32mINSERT INTO "users" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Leia Organa"], ["bio", "But I was going into Tosche Station to pick up some power converters!"], ["created_at", "2019-12-03 21:08:42.948078"], ["updated_at", "2019-12-03 21:08:42.948078"]]
-  [1m[35m (1.6ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
-  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
-  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Rey"], ["bio", "You can't stop change any more than you can stop the suns from setting."], ["created_at", "2019-12-03 21:09:54.450369"], ["updated_at", "2019-12-03 21:09:54.450369"]]
-  [1m[35m (2.5ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mKeg Create (0.3ms)[0m  [1m[32mINSERT INTO "kegs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Gold Leader"], ["created_at", "2019-12-03 21:09:54.463474"], ["updated_at", "2019-12-03 21:09:54.463474"]]
-  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mFloor Create (0.3ms)[0m  [1m[32mINSERT INTO "floors" ("building", "floor_number", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["building", "Mygeeto"], ["floor_number", "2"], ["created_at", "2019-12-03 21:09:54.474018"], ["updated_at", "2019-12-03 21:09:54.474018"]]
-  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Leia Organa"], ["bio", "You will remove these restraints and leave this cell with the door open."], ["created_at", "2019-12-03 21:09:54.478396"], ["updated_at", "2019-12-03 21:09:54.478396"]]
-  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mKeg Create (0.3ms)[0m  [1m[32mINSERT INTO "kegs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Rogue Leader"], ["created_at", "2019-12-03 21:09:54.481767"], ["updated_at", "2019-12-03 21:09:54.481767"]]
-  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mFloor Create (0.3ms)[0m  [1m[32mINSERT INTO "floors" ("building", "floor_number", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["building", "Endor"], ["floor_number", "7"], ["created_at", "2019-12-03 21:09:54.485744"], ["updated_at", "2019-12-03 21:09:54.485744"]]
-  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Ben Solo"], ["bio", "Show me again, grandfather, and I will finish what you started."], ["created_at", "2019-12-03 21:09:54.489609"], ["updated_at", "2019-12-03 21:09:54.489609"]]
-  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mKeg Create (0.3ms)[0m  [1m[32mINSERT INTO "kegs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Yellow Leader"], ["created_at", "2019-12-03 21:09:54.493828"], ["updated_at", "2019-12-03 21:09:54.493828"]]
-  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mFloor Create (0.4ms)[0m  [1m[32mINSERT INTO "floors" ("building", "floor_number", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["building", "Jakku"], ["floor_number", "1"], ["created_at", "2019-12-03 21:09:54.498396"], ["updated_at", "2019-12-03 21:09:54.498396"]]
-  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Galen Erso"], ["bio", "We have no choice, General Calrissian! Our cruisers can't repel firepower of that magnitude!"], ["created_at", "2019-12-03 21:09:54.503387"], ["updated_at", "2019-12-03 21:09:54.503387"]]
-  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mKeg Create (0.3ms)[0m  [1m[32mINSERT INTO "kegs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Gray 9"], ["created_at", "2019-12-03 21:09:54.507986"], ["updated_at", "2019-12-03 21:09:54.507986"]]
-  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mFloor Create (0.3ms)[0m  [1m[32mINSERT INTO "floors" ("building", "floor_number", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["building", "Kashyyyk"], ["floor_number", "8"], ["created_at", "2019-12-03 21:09:54.511866"], ["updated_at", "2019-12-03 21:09:54.511866"]]
-  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Savage Opress"], ["bio", "I will start my operations here, and pull the rebels apart piece by piece. They'll be the architects of their own destruction."], ["created_at", "2019-12-03 21:09:54.516292"], ["updated_at", "2019-12-03 21:09:54.516292"]]
-  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mKeg Create (0.3ms)[0m  [1m[32mINSERT INTO "kegs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Gray 3"], ["created_at", "2019-12-03 21:09:54.520835"], ["updated_at", "2019-12-03 21:09:54.520835"]]
-  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mFloor Create (0.3ms)[0m  [1m[32mINSERT INTO "floors" ("building", "floor_number", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["building", "DQar"], ["floor_number", "6"], ["created_at", "2019-12-03 21:09:54.525221"], ["updated_at", "2019-12-03 21:09:54.525221"]]
-  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Jyn Erso"], ["bio", "I assume you need something. Desperately."], ["created_at", "2019-12-03 21:09:54.529550"], ["updated_at", "2019-12-03 21:09:54.529550"]]
-  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mKeg Create (0.3ms)[0m  [1m[32mINSERT INTO "kegs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Green Leader"], ["created_at", "2019-12-03 21:09:54.533145"], ["updated_at", "2019-12-03 21:09:54.533145"]]
-  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mFloor Create (0.3ms)[0m  [1m[32mINSERT INTO "floors" ("building", "floor_number", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["building", "Crait"], ["floor_number", "6"], ["created_at", "2019-12-03 21:09:54.537132"], ["updated_at", "2019-12-03 21:09:54.537132"]]
-  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Maz Kanata"], ["bio", "We're doomed."], ["created_at", "2019-12-03 21:09:54.541577"], ["updated_at", "2019-12-03 21:09:54.541577"]]
-  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mKeg Create (0.3ms)[0m  [1m[32mINSERT INTO "kegs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Gray 7"], ["created_at", "2019-12-03 21:09:54.545780"], ["updated_at", "2019-12-03 21:09:54.545780"]]
-  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mFloor Create (0.3ms)[0m  [1m[32mINSERT INTO "floors" ("building", "floor_number", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["building", "Dagobah"], ["floor_number", "3"], ["created_at", "2019-12-03 21:09:54.550300"], ["updated_at", "2019-12-03 21:09:54.550300"]]
-  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Poe Dameron"], ["bio", "I was not elected to watch my people suffer and die while you discuss this invasion in a committee!"], ["created_at", "2019-12-03 21:09:54.554494"], ["updated_at", "2019-12-03 21:09:54.554494"]]
-  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mKeg Create (0.3ms)[0m  [1m[32mINSERT INTO "kegs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Gray 1"], ["created_at", "2019-12-03 21:09:54.558392"], ["updated_at", "2019-12-03 21:09:54.558392"]]
-  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mFloor Create (0.6ms)[0m  [1m[32mINSERT INTO "floors" ("building", "floor_number", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["building", "Eadu"], ["floor_number", "5"], ["created_at", "2019-12-03 21:09:54.562975"], ["updated_at", "2019-12-03 21:09:54.562975"]]
-  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Count Dooku"], ["bio", "Twice the pride, double the fall."], ["created_at", "2019-12-03 21:09:54.591820"], ["updated_at", "2019-12-03 21:09:54.591820"]]
-  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mKeg Create (0.4ms)[0m  [1m[32mINSERT INTO "kegs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Phoenix 2"], ["created_at", "2019-12-03 21:09:54.596036"], ["updated_at", "2019-12-03 21:09:54.596036"]]
-  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mFloor Create (0.3ms)[0m  [1m[32mINSERT INTO "floors" ("building", "floor_number", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["building", "Scarif"], ["floor_number", "9"], ["created_at", "2019-12-03 21:09:54.600398"], ["updated_at", "2019-12-03 21:09:54.600398"]]
-  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Lyra Erso"], ["bio", "You will remove these restraints and leave this cell with the door open."], ["created_at", "2019-12-03 21:09:54.604201"], ["updated_at", "2019-12-03 21:09:54.604201"]]
-  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mKeg Create (0.3ms)[0m  [1m[32mINSERT INTO "kegs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Green Leader"], ["created_at", "2019-12-03 21:09:54.608108"], ["updated_at", "2019-12-03 21:09:54.608108"]]
-  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mFloor Create (0.4ms)[0m  [1m[32mINSERT INTO "floors" ("building", "floor_number", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["building", "Lothal"], ["floor_number", "1"], ["created_at", "2019-12-03 21:09:54.612499"], ["updated_at", "2019-12-03 21:09:54.612499"]]
-  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Watto"], ["bio", "Let's just say my master will always do what needs to be done. I'm not even sure how peacetime will agree with him."], ["created_at", "2019-12-03 21:09:54.617933"], ["updated_at", "2019-12-03 21:09:54.617933"]]
-  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mKeg Create (0.3ms)[0m  [1m[32mINSERT INTO "kegs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Rogue Leader"], ["created_at", "2019-12-03 21:09:54.621986"], ["updated_at", "2019-12-03 21:09:54.621986"]]
-  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mFloor Create (0.4ms)[0m  [1m[32mINSERT INTO "floors" ("building", "floor_number", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["building", "Lothal"], ["floor_number", "6"], ["created_at", "2019-12-03 21:09:54.626262"], ["updated_at", "2019-12-03 21:09:54.626262"]]
-  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mUser Create (0.4ms)[0m  [1m[32mINSERT INTO "users" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Yoda"], ["bio", "War is in your blood. I studied the art of war, worked to perfect it, but you? You were forged by it."], ["created_at", "2019-12-03 21:09:54.631828"], ["updated_at", "2019-12-03 21:09:54.631828"]]
-  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mKeg Create (0.4ms)[0m  [1m[32mINSERT INTO "kegs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Green Leader"], ["created_at", "2019-12-03 21:09:54.637123"], ["updated_at", "2019-12-03 21:09:54.637123"]]
-  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mFloor Create (0.3ms)[0m  [1m[32mINSERT INTO "floors" ("building", "floor_number", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["building", "Takodana"], ["floor_number", "9"], ["created_at", "2019-12-03 21:09:54.641778"], ["updated_at", "2019-12-03 21:09:54.641778"]]
-  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Yoda"], ["bio", "Once something is known, it cannot be unknown."], ["created_at", "2019-12-03 21:09:54.646095"], ["updated_at", "2019-12-03 21:09:54.646095"]]
-  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mKeg Create (0.3ms)[0m  [1m[32mINSERT INTO "kegs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Red Leader"], ["created_at", "2019-12-03 21:09:54.650661"], ["updated_at", "2019-12-03 21:09:54.650661"]]
-  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mFloor Create (0.3ms)[0m  [1m[32mINSERT INTO "floors" ("building", "floor_number", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["building", "Death Star"], ["floor_number", "9"], ["created_at", "2019-12-03 21:09:54.655444"], ["updated_at", "2019-12-03 21:09:54.655444"]]
-  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Leia Organa"], ["bio", "Just for once, let me look on you with my own eyes."], ["created_at", "2019-12-03 21:09:54.659232"], ["updated_at", "2019-12-03 21:09:54.659232"]]
-  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mKeg Create (0.3ms)[0m  [1m[32mINSERT INTO "kegs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Gold 4"], ["created_at", "2019-12-03 21:09:54.663204"], ["updated_at", "2019-12-03 21:09:54.663204"]]
-  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mFloor Create (0.3ms)[0m  [1m[32mINSERT INTO "floors" ("building", "floor_number", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["building", "Dathomir"], ["floor_number", "2"], ["created_at", "2019-12-03 21:09:54.666858"], ["updated_at", "2019-12-03 21:09:54.666858"]]
-  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mUser Create (0.5ms)[0m  [1m[32mINSERT INTO "users" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Darth Caedus"], ["bio", "You don’t need to see his identification. These aren’t the droids you’re looking for."], ["created_at", "2019-12-03 21:09:54.670856"], ["updated_at", "2019-12-03 21:09:54.670856"]]
-  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mKeg Create (0.3ms)[0m  [1m[32mINSERT INTO "kegs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Red 4"], ["created_at", "2019-12-03 21:09:54.675438"], ["updated_at", "2019-12-03 21:09:54.675438"]]
-  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mFloor Create (0.3ms)[0m  [1m[32mINSERT INTO "floors" ("building", "floor_number", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["building", "Ahch-To"], ["floor_number", "2"], ["created_at", "2019-12-03 21:09:54.679213"], ["updated_at", "2019-12-03 21:09:54.679213"]]
-  [1m[35m (1.0ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Supreme Leader Snoke"], ["bio", "Obi-Wan was wise to hide her from me. Now, his failure is complete. If you will not turn to the Dark Side… then perhaps she will."], ["created_at", "2019-12-03 21:09:54.683044"], ["updated_at", "2019-12-03 21:09:54.683044"]]
-  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mKeg Create (0.3ms)[0m  [1m[32mINSERT INTO "kegs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Rogue Leader"], ["created_at", "2019-12-03 21:09:54.686990"], ["updated_at", "2019-12-03 21:09:54.686990"]]
-  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mFloor Create (0.3ms)[0m  [1m[32mINSERT INTO "floors" ("building", "floor_number", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["building", "Yavin 4"], ["floor_number", "7"], ["created_at", "2019-12-03 21:09:54.691325"], ["updated_at", "2019-12-03 21:09:54.691325"]]
-  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "General Hux"], ["bio", "I'm backwards you filthy furball!"], ["created_at", "2019-12-03 21:09:54.695323"], ["updated_at", "2019-12-03 21:09:54.695323"]]
-  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mKeg Create (0.3ms)[0m  [1m[32mINSERT INTO "kegs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Yellow Leader"], ["created_at", "2019-12-03 21:09:54.699641"], ["updated_at", "2019-12-03 21:09:54.699641"]]
-  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mFloor Create (0.3ms)[0m  [1m[32mINSERT INTO "floors" ("building", "floor_number", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["building", "Starkiller Base"], ["floor_number", "6"], ["created_at", "2019-12-03 21:09:54.703886"], ["updated_at", "2019-12-03 21:09:54.703886"]]
-  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Kylo Ren"], ["bio", "Well, you said you wanted to be around when I made a mistake."], ["created_at", "2019-12-03 21:09:54.708086"], ["updated_at", "2019-12-03 21:09:54.708086"]]
-  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mKeg Create (0.3ms)[0m  [1m[32mINSERT INTO "kegs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Green 6"], ["created_at", "2019-12-03 21:09:54.712895"], ["updated_at", "2019-12-03 21:09:54.712895"]]
-  [1m[35m (1.3ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mFloor Create (0.3ms)[0m  [1m[32mINSERT INTO "floors" ("building", "floor_number", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["building", "Ahch-To"], ["floor_number", "5"], ["created_at", "2019-12-03 21:09:54.717902"], ["updated_at", "2019-12-03 21:09:54.717902"]]
-  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Ki-Adi-Mundi"], ["bio", "You will remove these restraints and leave this cell with the door open."], ["created_at", "2019-12-03 21:09:54.722815"], ["updated_at", "2019-12-03 21:09:54.722815"]]
-  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mKeg Create (0.3ms)[0m  [1m[32mINSERT INTO "kegs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Yellow 9"], ["created_at", "2019-12-03 21:09:54.727023"], ["updated_at", "2019-12-03 21:09:54.727023"]]
-  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mFloor Create (0.3ms)[0m  [1m[32mINSERT INTO "floors" ("building", "floor_number", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["building", "Cloud City"], ["floor_number", "6"], ["created_at", "2019-12-03 21:09:54.731722"], ["updated_at", "2019-12-03 21:09:54.731722"]]
-  [1m[35m (0.7ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mUser Create (0.3ms)[0m  [1m[32mINSERT INTO "users" ("name", "bio", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "Bendu"], ["bio", "Not even the dark side can give you that power."], ["created_at", "2019-12-03 21:09:54.736018"], ["updated_at", "2019-12-03 21:09:54.736018"]]
-  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mKeg Create (0.3ms)[0m  [1m[32mINSERT INTO "kegs" ("name", "created_at", "updated_at") VALUES (?, ?, ?)[0m  [["name", "Red Leader"], ["created_at", "2019-12-03 21:09:54.740294"], ["updated_at", "2019-12-03 21:09:54.740294"]]
-  [1m[35m (1.4ms)[0m  [1m[36mcommit transaction[0m
-  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
-  [1m[36mFloor Create (0.4ms)[0m  [1m[32mINSERT INTO "floors" ("building", "floor_number", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["building", "Cloud City"], ["floor_number", "5"], ["created_at", "2019-12-03 21:09:54.746110"], ["updated_at", "2019-12-03 21:09:54.746110"]]
-  [1m[35m (1.1ms)[0m  [1m[36mcommit transaction[0m
->>>>>>> jaboi
+Started GET "/kegs/1" for 127.0.0.1 at 2019-12-03 16:32:27 -0500
+Processing by KegsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mKeg Load (0.1ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:12:in `show'
+  Rendering kegs/show.erb within layouts/application
+  [1m[36mKegFloor Load (0.1ms)[0m  [1m[34mSELECT "keg_floors".* FROM "keg_floors" WHERE "keg_floors"."keg_id" = ?[0m  [["keg_id", 1]]
+  ↳ app/views/kegs/show.erb:5
+  Rendered kegs/show.erb within layouts/application (Duration: 1.0ms | Allocations: 664)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 0.2ms | Allocations: 5252)
+
+
