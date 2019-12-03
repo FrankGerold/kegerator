@@ -646,3 +646,1300 @@ Processing by KegsController#show as HTML
 Completed 200 OK in 9ms (Views: 6.7ms | ActiveRecord: 0.2ms | Allocations: 5252)
 
 
+Started GET "/kegs/new" for 127.0.0.1 at 2019-12-03 17:07:49 -0500
+  [1m[35m (1.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by KegsController#new as HTML
+  Rendering kegs/new.erb within layouts/application
+  Rendered kegs/new.erb within layouts/application (Duration: 173.4ms | Allocations: 180647)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 254ms (Views: 211.9ms | ActiveRecord: 0.6ms | Allocations: 196211)
+
+
+Started GET "/kegs/1" for 127.0.0.1 at 2019-12-03 17:07:56 -0500
+Processing by KegsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mKeg Load (1.1ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:42:in `find_keg'
+  Rendering kegs/show.erb within layouts/application
+  [1m[36mKegFloor Load (0.5ms)[0m  [1m[34mSELECT "keg_floors".* FROM "keg_floors" WHERE "keg_floors"."keg_id" = ?[0m  [["keg_id", 1]]
+  ↳ app/views/kegs/show.erb:5
+  Rendered kegs/show.erb within layouts/application (Duration: 30.3ms | Allocations: 7489)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 48ms (Views: 38.4ms | ActiveRecord: 1.8ms | Allocations: 12552)
+
+
+Started GET "/kegs/1/edit" for 127.0.0.1 at 2019-12-03 17:08:00 -0500
+Processing by KegsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mKeg Load (0.2ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:42:in `find_keg'
+  Rendering kegs/edit.erb within layouts/application
+  Rendered kegs/edit.erb within layouts/application (Duration: 5.1ms | Allocations: 1093)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 12.3ms | ActiveRecord: 0.2ms | Allocations: 5782)
+
+
+Started PATCH "/kegs/1" for 127.0.0.1 at 2019-12-03 17:08:03 -0500
+Processing by KegsController#update as JS
+  Parameters: {"authenticity_token"=>"q2Fd+YpbHBBEFNTBVurc5MNMzel8csv2HniP6Mlizgo5ysKMzVkoAErG5L7R3nVOFd73TRumxBRD59LAO2JjUA==", "keg"=>{"name"=>"", "type"=>""}, "commit"=>"Update Keg", "id"=>"1"}
+  [1m[36mKeg Load (0.2ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:42:in `find_keg'
+  Rendering kegs/edit.erb
+  Rendered kegs/edit.erb (Duration: 1.9ms | Allocations: 818)
+Completed 200 OK in 12ms (Views: 7.9ms | ActiveRecord: 0.2ms | Allocations: 4319)
+
+
+Started PATCH "/kegs/1" for 127.0.0.1 at 2019-12-03 17:08:05 -0500
+Processing by KegsController#update as JS
+  Parameters: {"authenticity_token"=>"q2Fd+YpbHBBEFNTBVurc5MNMzel8csv2HniP6Mlizgo5ysKMzVkoAErG5L7R3nVOFd73TRumxBRD59LAO2JjUA==", "keg"=>{"name"=>"", "type"=>""}, "commit"=>"Update Keg", "id"=>"1"}
+  [1m[36mKeg Load (0.1ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:42:in `find_keg'
+  Rendering kegs/edit.erb
+  Rendered kegs/edit.erb (Duration: 4.4ms | Allocations: 803)
+Completed 200 OK in 8ms (Views: 5.2ms | ActiveRecord: 0.1ms | Allocations: 3058)
+
+
+Started PATCH "/kegs/1" for 127.0.0.1 at 2019-12-03 17:08:06 -0500
+Processing by KegsController#update as JS
+  Parameters: {"authenticity_token"=>"q2Fd+YpbHBBEFNTBVurc5MNMzel8csv2HniP6Mlizgo5ysKMzVkoAErG5L7R3nVOFd73TRumxBRD59LAO2JjUA==", "keg"=>{"name"=>"", "type"=>""}, "commit"=>"Update Keg", "id"=>"1"}
+  [1m[36mKeg Load (0.1ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:42:in `find_keg'
+  Rendering kegs/edit.erb
+  Rendered kegs/edit.erb (Duration: 1.2ms | Allocations: 804)
+Completed 200 OK in 5ms (Views: 1.7ms | ActiveRecord: 0.1ms | Allocations: 3063)
+
+
+Started PATCH "/kegs/1" for 127.0.0.1 at 2019-12-03 17:08:06 -0500
+Processing by KegsController#update as JS
+  Parameters: {"authenticity_token"=>"q2Fd+YpbHBBEFNTBVurc5MNMzel8csv2HniP6Mlizgo5ysKMzVkoAErG5L7R3nVOFd73TRumxBRD59LAO2JjUA==", "keg"=>{"name"=>"", "type"=>""}, "commit"=>"Update Keg", "id"=>"1"}
+  [1m[36mKeg Load (0.1ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:42:in `find_keg'
+  Rendering kegs/edit.erb
+  Rendered kegs/edit.erb (Duration: 1.9ms | Allocations: 803)
+Completed 200 OK in 6ms (Views: 2.5ms | ActiveRecord: 0.1ms | Allocations: 3053)
+
+
+Started PATCH "/kegs/1" for 127.0.0.1 at 2019-12-03 17:08:06 -0500
+Processing by KegsController#update as JS
+  Parameters: {"authenticity_token"=>"q2Fd+YpbHBBEFNTBVurc5MNMzel8csv2HniP6Mlizgo5ysKMzVkoAErG5L7R3nVOFd73TRumxBRD59LAO2JjUA==", "keg"=>{"name"=>"", "type"=>""}, "commit"=>"Update Keg", "id"=>"1"}
+  [1m[36mKeg Load (0.1ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:42:in `find_keg'
+  Rendering kegs/edit.erb
+  Rendered kegs/edit.erb (Duration: 1.4ms | Allocations: 803)
+Completed 200 OK in 6ms (Views: 2.2ms | ActiveRecord: 0.1ms | Allocations: 3046)
+
+
+Started PATCH "/kegs/1" for 127.0.0.1 at 2019-12-03 17:08:06 -0500
+Processing by KegsController#update as JS
+  Parameters: {"authenticity_token"=>"q2Fd+YpbHBBEFNTBVurc5MNMzel8csv2HniP6Mlizgo5ysKMzVkoAErG5L7R3nVOFd73TRumxBRD59LAO2JjUA==", "keg"=>{"name"=>"", "type"=>""}, "commit"=>"Update Keg", "id"=>"1"}
+  [1m[36mKeg Load (0.1ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:42:in `find_keg'
+  Rendering kegs/edit.erb
+  Rendered kegs/edit.erb (Duration: 2.0ms | Allocations: 803)
+Completed 200 OK in 6ms (Views: 2.7ms | ActiveRecord: 0.1ms | Allocations: 3048)
+
+
+Started PATCH "/kegs/1" for 127.0.0.1 at 2019-12-03 17:08:07 -0500
+Processing by KegsController#update as JS
+  Parameters: {"authenticity_token"=>"q2Fd+YpbHBBEFNTBVurc5MNMzel8csv2HniP6Mlizgo5ysKMzVkoAErG5L7R3nVOFd73TRumxBRD59LAO2JjUA==", "keg"=>{"name"=>"", "type"=>""}, "commit"=>"Update Keg", "id"=>"1"}
+  [1m[36mKeg Load (0.1ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:42:in `find_keg'
+  Rendering kegs/edit.erb
+  Rendered kegs/edit.erb (Duration: 1.4ms | Allocations: 803)
+Completed 200 OK in 6ms (Views: 1.9ms | ActiveRecord: 0.1ms | Allocations: 3046)
+
+
+Started PATCH "/kegs/1" for 127.0.0.1 at 2019-12-03 17:08:09 -0500
+Processing by KegsController#update as JS
+  Parameters: {"authenticity_token"=>"q2Fd+YpbHBBEFNTBVurc5MNMzel8csv2HniP6Mlizgo5ysKMzVkoAErG5L7R3nVOFd73TRumxBRD59LAO2JjUA==", "keg"=>{"name"=>"1", "type"=>""}, "commit"=>"Update Keg", "id"=>"1"}
+  [1m[36mKeg Load (0.1ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:42:in `find_keg'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/kegs_controller.rb:31:in `update'
+  [1m[36mKeg Update (2.6ms)[0m  [1m[33mUPDATE "kegs" SET "name" = ?, "type" = ?, "updated_at" = ? WHERE "kegs"."id" = ?[0m  [["name", "1"], ["type", ""], ["updated_at", "2019-12-03 22:08:09.508240"], ["id", 1]]
+  ↳ app/controllers/kegs_controller.rb:31:in `update'
+  [1m[35m (0.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/kegs_controller.rb:31:in `update'
+Redirected to http://127.0.0.1:3000/kegs/1
+Completed 200 OK in 11ms (ActiveRecord: 3.6ms | Allocations: 3369)
+
+
+Started GET "/kegs/1" for 127.0.0.1 at 2019-12-03 17:08:09 -0500
+Processing by KegsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mKeg Load (0.7ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:42:in `find_keg'
+  Rendering kegs/show.erb within layouts/application
+  [1m[36mKegFloor Load (0.2ms)[0m  [1m[34mSELECT "keg_floors".* FROM "keg_floors" WHERE "keg_floors"."keg_id" = ?[0m  [["keg_id", 1]]
+  ↳ app/views/kegs/show.erb:5
+  Rendered kegs/show.erb within layouts/application (Duration: 2.5ms | Allocations: 665)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 16.2ms | ActiveRecord: 0.8ms | Allocations: 5209)
+
+
+Started GET "/kegs" for 127.0.0.1 at 2019-12-03 17:10:59 -0500
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by KegsController#index as HTML
+  Rendering kegs/index.erb within layouts/application
+  [1m[36mKeg Load (0.7ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs"[0m
+  ↳ app/views/kegs/index.erb:4
+  Rendered kegs/index.erb within layouts/application (Duration: 13.5ms | Allocations: 5255)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 60ms (Views: 36.2ms | ActiveRecord: 1.5ms | Allocations: 17215)
+
+
+Started GET "/kegs/1" for 127.0.0.1 at 2019-12-03 17:11:03 -0500
+Processing by KegsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mKeg Load (0.5ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/show.erb within layouts/application
+  [1m[36mKegFloor Load (0.7ms)[0m  [1m[34mSELECT "keg_floors".* FROM "keg_floors" WHERE "keg_floors"."keg_id" = ?[0m  [["keg_id", 1]]
+  ↳ app/views/kegs/show.erb:5
+  Rendered kegs/show.erb within layouts/application (Duration: 12.1ms | Allocations: 4380)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 33ms (Views: 22.7ms | ActiveRecord: 1.5ms | Allocations: 9416)
+
+
+Started GET "/kegs/1/edit" for 127.0.0.1 at 2019-12-03 17:11:08 -0500
+Processing by KegsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mKeg Load (0.2ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/edit.erb within layouts/application
+  Rendered kegs/edit.erb within layouts/application (Duration: 90.9ms | Allocations: 180494)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 99ms (Views: 96.2ms | ActiveRecord: 0.2ms | Allocations: 185199)
+
+
+Started GET "/kegs/1/new" for 127.0.0.1 at 2019-12-03 17:11:12 -0500
+  
+ActionController::RoutingError (No route matches [GET] "/kegs/1/new"):
+  
+actionpack (6.0.1) lib/action_dispatch/middleware/debug_exceptions.rb:36:in `call'
+web-console (4.0.1) lib/web_console/middleware.rb:132:in `call_app'
+web-console (4.0.1) lib/web_console/middleware.rb:28:in `block in call'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `catch'
+web-console (4.0.1) lib/web_console/middleware.rb:17:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/show_exceptions.rb:33:in `call'
+railties (6.0.1) lib/rails/rack/logger.rb:38:in `call_app'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `block in call'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `block in tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:28:in `tagged'
+activesupport (6.0.1) lib/active_support/tagged_logging.rb:80:in `tagged'
+railties (6.0.1) lib/rails/rack/logger.rb:26:in `call'
+sprockets-rails (3.2.1) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/remote_ip.rb:81:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/request_id.rb:27:in `call'
+rack (2.0.7) lib/rack/method_override.rb:22:in `call'
+rack (2.0.7) lib/rack/runtime.rb:22:in `call'
+activesupport (6.0.1) lib/active_support/cache/strategy/local_cache_middleware.rb:29:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/executor.rb:14:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/static.rb:126:in `call'
+rack (2.0.7) lib/rack/sendfile.rb:111:in `call'
+actionpack (6.0.1) lib/action_dispatch/middleware/host_authorization.rb:83:in `call'
+webpacker (4.2.0) lib/webpacker/dev_server_proxy.rb:23:in `perform_request'
+rack-proxy (0.6.5) lib/rack/proxy.rb:57:in `call'
+railties (6.0.1) lib/rails/engine.rb:526:in `call'
+puma (4.3.0) lib/puma/configuration.rb:228:in `call'
+puma (4.3.0) lib/puma/server.rb:667:in `handle_request'
+puma (4.3.0) lib/puma/server.rb:470:in `process_client'
+puma (4.3.0) lib/puma/server.rb:328:in `block in run'
+puma (4.3.0) lib/puma/thread_pool.rb:134:in `block in spawn_thread'
+Started GET "/kegs/new" for 127.0.0.1 at 2019-12-03 17:11:15 -0500
+Processing by KegsController#new as HTML
+  Rendering kegs/new.erb within layouts/application
+  Rendered kegs/new.erb within layouts/application (Duration: 3.6ms | Allocations: 1065)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 15.8ms | ActiveRecord: 0.0ms | Allocations: 5328)
+
+
+Started GET "/kegs/1/edit" for 127.0.0.1 at 2019-12-03 17:14:38 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by KegsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mKeg Load (0.2ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/edit.erb within layouts/application
+  Rendered kegs/edit.erb within layouts/application (Duration: 75.7ms | Allocations: 180694)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 137ms (Views: 97.0ms | ActiveRecord: 0.7ms | Allocations: 196982)
+
+
+Started PATCH "/kegs/1" for 127.0.0.1 at 2019-12-03 17:14:47 -0500
+Processing by KegsController#update as JS
+  Parameters: {"authenticity_token"=>"F2O3LCDLtijIRJi0Vpsq9cbgLtHPMZMr5LOUmCcFabqFyChZZ8mCOMaWqMvRr4NfEHIUdajlnMm5LMmw1QXE4A==", "keg"=>{"name"=>"", "type"=>""}, "commit"=>"Update Keg", "id"=>"1"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1059)
+
+
+  
+NoMethodError (undefined method `update' for nil:NilClass):
+  
+app/controllers/kegs_controller.rb:31:in `update'
+Started PATCH "/kegs/1" for 127.0.0.1 at 2019-12-03 17:14:49 -0500
+Processing by KegsController#update as JS
+  Parameters: {"authenticity_token"=>"F2O3LCDLtijIRJi0Vpsq9cbgLtHPMZMr5LOUmCcFabqFyChZZ8mCOMaWqMvRr4NfEHIUdajlnMm5LMmw1QXE4A==", "keg"=>{"name"=>"", "type"=>""}, "commit"=>"Update Keg", "id"=>"1"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1062)
+
+
+  
+NoMethodError (undefined method `update' for nil:NilClass):
+  
+app/controllers/kegs_controller.rb:31:in `update'
+Started GET "/kegs/new" for 127.0.0.1 at 2019-12-03 17:15:25 -0500
+Processing by KegsController#new as HTML
+  Rendering kegs/new.erb within layouts/application
+  Rendered kegs/new.erb within layouts/application (Duration: 1.9ms | Allocations: 1069)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 18.3ms | ActiveRecord: 0.0ms | Allocations: 5332)
+
+
+Started POST "/kegs" for 127.0.0.1 at 2019-12-03 17:15:27 -0500
+Processing by KegsController#create as JS
+  Parameters: {"authenticity_token"=>"za06LagrNZCQqLwf2jTVcsjV1+UOrrrDOFYJw4/iLvpfBqVY7ykBgJ56jGBdAHzYHkftQWl6tSFlyVTrfeKDoA==", "keg"=>{"name"=>"", "type"=>""}, "commit"=>"Create Keg"}
+  Rendering kegs/new.erb
+  Rendered kegs/new.erb (Duration: 2.1ms | Allocations: 750)
+Completed 200 OK in 9ms (Views: 5.9ms | ActiveRecord: 0.0ms | Allocations: 3503)
+
+
+Started POST "/kegs" for 127.0.0.1 at 2019-12-03 17:15:30 -0500
+Processing by KegsController#create as JS
+  Parameters: {"authenticity_token"=>"za06LagrNZCQqLwf2jTVcsjV1+UOrrrDOFYJw4/iLvpfBqVY7ykBgJ56jGBdAHzYHkftQWl6tSFlyVTrfeKDoA==", "keg"=>{"name"=>"", "type"=>""}, "commit"=>"Create Keg"}
+  Rendering kegs/new.erb
+  Rendered kegs/new.erb (Duration: 1.0ms | Allocations: 742)
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.0ms | Allocations: 2268)
+
+
+Started POST "/kegs" for 127.0.0.1 at 2019-12-03 17:15:30 -0500
+Processing by KegsController#create as JS
+  Parameters: {"authenticity_token"=>"za06LagrNZCQqLwf2jTVcsjV1+UOrrrDOFYJw4/iLvpfBqVY7ykBgJ56jGBdAHzYHkftQWl6tSFlyVTrfeKDoA==", "keg"=>{"name"=>"", "type"=>""}, "commit"=>"Create Keg"}
+  Rendering kegs/new.erb
+  Rendered kegs/new.erb (Duration: 1.0ms | Allocations: 742)
+Completed 200 OK in 3ms (Views: 1.5ms | ActiveRecord: 0.0ms | Allocations: 2267)
+
+
+Started POST "/kegs" for 127.0.0.1 at 2019-12-03 17:15:30 -0500
+Processing by KegsController#create as JS
+  Parameters: {"authenticity_token"=>"za06LagrNZCQqLwf2jTVcsjV1+UOrrrDOFYJw4/iLvpfBqVY7ykBgJ56jGBdAHzYHkftQWl6tSFlyVTrfeKDoA==", "keg"=>{"name"=>"", "type"=>""}, "commit"=>"Create Keg"}
+  Rendering kegs/new.erb
+  Rendered kegs/new.erb (Duration: 1.0ms | Allocations: 742)
+Completed 200 OK in 3ms (Views: 1.4ms | ActiveRecord: 0.0ms | Allocations: 2256)
+
+
+Started POST "/kegs" for 127.0.0.1 at 2019-12-03 17:15:55 -0500
+Processing by KegsController#create as JS
+  Parameters: {"authenticity_token"=>"za06LagrNZCQqLwf2jTVcsjV1+UOrrrDOFYJw4/iLvpfBqVY7ykBgJ56jGBdAHzYHkftQWl6tSFlyVTrfeKDoA==", "keg"=>{"name"=>"1", "type"=>""}, "commit"=>"Create Keg"}
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/kegs_controller.rb:17:in `create'
+  [1m[36mKeg Create (0.5ms)[0m  [1m[32mINSERT INTO "kegs" ("name", "type", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["name", "1"], ["type", ""], ["created_at", "2019-12-03 22:15:55.522763"], ["updated_at", "2019-12-03 22:15:55.522763"]]
+  ↳ app/controllers/kegs_controller.rb:17:in `create'
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/kegs_controller.rb:17:in `create'
+Redirected to http://127.0.0.1:3000/kegs/21
+Completed 200 OK in 9ms (ActiveRecord: 3.8ms | Allocations: 2800)
+
+
+Started GET "/kegs/21" for 127.0.0.1 at 2019-12-03 17:15:55 -0500
+Processing by KegsController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mKeg Load (0.2ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/show.erb within layouts/application
+  [1m[36mKegFloor Load (0.2ms)[0m  [1m[34mSELECT "keg_floors".* FROM "keg_floors" WHERE "keg_floors"."keg_id" = ?[0m  [["keg_id", 21]]
+  ↳ app/views/kegs/show.erb:5
+  Rendered kegs/show.erb within layouts/application (Duration: 25.7ms | Allocations: 6672)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 36ms (Views: 32.2ms | ActiveRecord: 0.6ms | Allocations: 11280)
+
+
+Started GET "/kegs/21/edit" for 127.0.0.1 at 2019-12-03 17:16:00 -0500
+Processing by KegsController#edit as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mKeg Load (0.2ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/edit.erb within layouts/application
+  Rendered kegs/edit.erb within layouts/application (Duration: 1.5ms | Allocations: 794)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.2ms | Allocations: 5344)
+
+
+Started PATCH "/kegs/21" for 127.0.0.1 at 2019-12-03 17:16:27 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by KegsController#update as JS
+  Parameters: {"authenticity_token"=>"z3HZseyGGWHx5Bjz54yD4uUUsXC+of6zj5GD2Y35RQVd2kbEq4Qtcf82KIxguCpIM4aL1Nl18VHSDt7xf/noXw==", "keg"=>{"name"=>"", "type"=>""}, "commit"=>"Update Keg", "id"=>"21"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 1010)
+
+
+  
+NoMethodError (undefined method `update' for nil:NilClass):
+  
+app/controllers/kegs_controller.rb:31:in `update'
+Started PATCH "/kegs/21" for 127.0.0.1 at 2019-12-03 17:16:29 -0500
+Processing by KegsController#update as JS
+  Parameters: {"authenticity_token"=>"z3HZseyGGWHx5Bjz54yD4uUUsXC+of6zj5GD2Y35RQVd2kbEq4Qtcf82KIxguCpIM4aL1Nl18VHSDt7xf/noXw==", "keg"=>{"name"=>"1", "type"=>""}, "commit"=>"Update Keg", "id"=>"21"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1050)
+
+
+  
+NoMethodError (undefined method `update' for nil:NilClass):
+  
+app/controllers/kegs_controller.rb:31:in `update'
+Started PATCH "/kegs/21" for 127.0.0.1 at 2019-12-03 17:16:31 -0500
+Processing by KegsController#update as JS
+  Parameters: {"authenticity_token"=>"z3HZseyGGWHx5Bjz54yD4uUUsXC+of6zj5GD2Y35RQVd2kbEq4Qtcf82KIxguCpIM4aL1Nl18VHSDt7xf/noXw==", "keg"=>{"name"=>"1", "type"=>""}, "commit"=>"Update Keg", "id"=>"21"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 1051)
+
+
+  
+NoMethodError (undefined method `update' for nil:NilClass):
+  
+app/controllers/kegs_controller.rb:31:in `update'
+Started PATCH "/kegs/21" for 127.0.0.1 at 2019-12-03 17:16:31 -0500
+Processing by KegsController#update as JS
+  Parameters: {"authenticity_token"=>"z3HZseyGGWHx5Bjz54yD4uUUsXC+of6zj5GD2Y35RQVd2kbEq4Qtcf82KIxguCpIM4aL1Nl18VHSDt7xf/noXw==", "keg"=>{"name"=>"1", "type"=>""}, "commit"=>"Update Keg", "id"=>"21"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 1048)
+
+
+  
+NoMethodError (undefined method `update' for nil:NilClass):
+  
+app/controllers/kegs_controller.rb:31:in `update'
+Started PATCH "/kegs/21" for 127.0.0.1 at 2019-12-03 17:16:31 -0500
+Processing by KegsController#update as JS
+  Parameters: {"authenticity_token"=>"z3HZseyGGWHx5Bjz54yD4uUUsXC+of6zj5GD2Y35RQVd2kbEq4Qtcf82KIxguCpIM4aL1Nl18VHSDt7xf/noXw==", "keg"=>{"name"=>"1", "type"=>""}, "commit"=>"Update Keg", "id"=>"21"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 1048)
+
+
+  
+NoMethodError (undefined method `update' for nil:NilClass):
+  
+app/controllers/kegs_controller.rb:31:in `update'
+Started GET "/kegs/1/edit" for 127.0.0.1 at 2019-12-03 17:16:55 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by KegsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mKeg Load (0.2ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/edit.erb within layouts/application
+  Rendered kegs/edit.erb within layouts/application (Duration: 3.4ms | Allocations: 848)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 10.3ms | ActiveRecord: 0.7ms | Allocations: 11282)
+
+
+Started PATCH "/kegs/1" for 127.0.0.1 at 2019-12-03 17:16:59 -0500
+Processing by KegsController#update as JS
+  Parameters: {"authenticity_token"=>"MwR8gSKd+j1HqJbnn8IvX7KgE2dORTjl1zUnYGumc4+hr+P0ZZ/OLUl6ppgY9ob1ZDIpwymRNweKqnpImabe1Q==", "keg"=>{"name"=>"", "type"=>""}, "commit"=>"Update Keg", "id"=>"1"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 1056)
+
+
+  
+NoMethodError (undefined method `update' for nil:NilClass):
+  
+app/controllers/kegs_controller.rb:31:in `update'
+Started GET "/kegs/2/edit" for 127.0.0.1 at 2019-12-03 17:17:31 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by KegsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mKeg Load (0.2ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/edit.erb within layouts/application
+  Rendered kegs/edit.erb within layouts/application (Duration: 79.8ms | Allocations: 180689)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 134ms (Views: 101.1ms | ActiveRecord: 1.7ms | Allocations: 196972)
+
+
+Started PATCH "/kegs/2" for 127.0.0.1 at 2019-12-03 17:17:35 -0500
+Processing by KegsController#update as JS
+  Parameters: {"authenticity_token"=>"GftyObuJKnZE/LetcXA9HlWd10YC5gheJzTCLKs4kJyLUO1M/IseZkouh9L2RJS0gw/t4mUyB7x6q58EWTg9xg==", "keg"=>{"name"=>"", "type"=>""}, "commit"=>"Update Keg", "id"=>"2"}
+Completed 500 Internal Server Error in 2ms (ActiveRecord: 0.0ms | Allocations: 1059)
+
+
+  
+NoMethodError (undefined method `update' for nil:NilClass):
+  
+app/controllers/kegs_controller.rb:31:in `update'
+Started PATCH "/kegs/2" for 127.0.0.1 at 2019-12-03 17:17:59 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by KegsController#update as JS
+  Parameters: {"authenticity_token"=>"GftyObuJKnZE/LetcXA9HlWd10YC5gheJzTCLKs4kJyLUO1M/IseZkouh9L2RJS0gw/t4mUyB7x6q58EWTg9xg==", "keg"=>{"name"=>"3444", "type"=>""}, "commit"=>"Update Keg", "id"=>"2"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 1019)
+
+
+  
+NoMethodError (undefined method `update' for nil:NilClass):
+  
+app/controllers/kegs_controller.rb:31:in `update'
+Started GET "/kegs/2/edit" for 127.0.0.1 at 2019-12-03 17:18:31 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by KegsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mKeg Load (0.1ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/edit.erb within layouts/application
+  Rendered kegs/edit.erb within layouts/application (Duration: 1.8ms | Allocations: 865)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 7.6ms | ActiveRecord: 0.7ms | Allocations: 11371)
+
+
+Started PATCH "/kegs/2" for 127.0.0.1 at 2019-12-03 17:18:56 -0500
+Processing by KegsController#update as JS
+  Parameters: {"authenticity_token"=>"Z7hantl7XV7myl3vCOL/AmFUu5DnJqQBJed8680tOTL1E8XrnnlpTugYbZCP1laot8aBNIDyq+N4eCHDPy2UaA==", "keg"=>{"name"=>"Gray Leader1", "type"=>""}, "commit"=>"Update Keg", "id"=>"2"}
+  [1m[36mKeg Load (0.1ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/kegs_controller.rb:31:in `update'
+  [1m[36mKeg Update (0.4ms)[0m  [1m[33mUPDATE "kegs" SET "name" = ?, "type" = ?, "updated_at" = ? WHERE "kegs"."id" = ?[0m  [["name", "Gray Leader1"], ["type", ""], ["updated_at", "2019-12-03 22:18:56.977556"], ["id", 2]]
+  ↳ app/controllers/kegs_controller.rb:31:in `update'
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/kegs_controller.rb:31:in `update'
+Redirected to http://127.0.0.1:3000/kegs/2
+Completed 200 OK in 9ms (ActiveRecord: 2.8ms | Allocations: 3528)
+
+
+Started GET "/kegs/2" for 127.0.0.1 at 2019-12-03 17:18:57 -0500
+Processing by KegsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mKeg Load (0.2ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/show.erb within layouts/application
+  [1m[36mKegFloor Load (0.2ms)[0m  [1m[34mSELECT "keg_floors".* FROM "keg_floors" WHERE "keg_floors"."keg_id" = ?[0m  [["keg_id", 2]]
+  ↳ app/views/kegs/show.erb:5
+  Rendered kegs/show.erb within layouts/application (Duration: 24.1ms | Allocations: 4378)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 35ms (Views: 29.3ms | ActiveRecord: 0.8ms | Allocations: 8946)
+
+
+Started GET "/kegs/1/edit" for 127.0.0.1 at 2019-12-03 17:19:03 -0500
+Processing by KegsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mKeg Load (0.2ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/edit.erb within layouts/application
+  Rendered kegs/edit.erb within layouts/application (Duration: 3.3ms | Allocations: 790)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 14.0ms | ActiveRecord: 0.2ms | Allocations: 5336)
+
+
+Started PATCH "/kegs/1" for 127.0.0.1 at 2019-12-03 17:19:06 -0500
+Processing by KegsController#update as JS
+  Parameters: {"authenticity_token"=>"ZRkWxduoiwEra7DteFsUgvmOxbAjDC0UWwrySPuqoBP3somwnKq/ESW5gJL/b70oLxz/FETYIvYGla9gCaoNSQ==", "keg"=>{"name"=>"", "type"=>""}, "commit"=>"Update Keg", "id"=>"1"}
+  [1m[36mKeg Load (0.2ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/edit.erb
+  Rendered kegs/edit.erb (Duration: 1.6ms | Allocations: 809)
+Completed 200 OK in 10ms (Views: 7.3ms | ActiveRecord: 0.2ms | Allocations: 4143)
+
+
+Started PATCH "/kegs/1" for 127.0.0.1 at 2019-12-03 17:19:46 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by KegsController#update as JS
+  Parameters: {"authenticity_token"=>"ZRkWxduoiwEra7DteFsUgvmOxbAjDC0UWwrySPuqoBP3somwnKq/ESW5gJL/b70oLxz/FETYIvYGla9gCaoNSQ==", "keg"=>{"name"=>"", "type"=>""}, "commit"=>"Update Keg", "id"=>"1"}
+  [1m[36mKeg Load (0.2ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/edit.erb
+  Rendered kegs/edit.erb (Duration: 2.0ms | Allocations: 1096)
+Completed 200 OK in 18ms (Views: 7.2ms | ActiveRecord: 0.7ms | Allocations: 10371)
+
+
+Started PATCH "/kegs/1" for 127.0.0.1 at 2019-12-03 17:19:48 -0500
+Processing by KegsController#update as JS
+  Parameters: {"authenticity_token"=>"ZRkWxduoiwEra7DteFsUgvmOxbAjDC0UWwrySPuqoBP3somwnKq/ESW5gJL/b70oLxz/FETYIvYGla9gCaoNSQ==", "keg"=>{"name"=>"", "type"=>""}, "commit"=>"Update Keg", "id"=>"1"}
+  [1m[36mKeg Load (0.1ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/edit.erb
+  Rendered kegs/edit.erb (Duration: 2.0ms | Allocations: 803)
+Completed 200 OK in 5ms (Views: 2.6ms | ActiveRecord: 0.1ms | Allocations: 3054)
+
+
+Started PATCH "/kegs/1" for 127.0.0.1 at 2019-12-03 17:19:48 -0500
+Processing by KegsController#update as JS
+  Parameters: {"authenticity_token"=>"ZRkWxduoiwEra7DteFsUgvmOxbAjDC0UWwrySPuqoBP3somwnKq/ESW5gJL/b70oLxz/FETYIvYGla9gCaoNSQ==", "keg"=>{"name"=>"", "type"=>""}, "commit"=>"Update Keg", "id"=>"1"}
+  [1m[36mKeg Load (0.2ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/edit.erb
+  Rendered kegs/edit.erb (Duration: 1.4ms | Allocations: 803)
+Completed 200 OK in 6ms (Views: 2.0ms | ActiveRecord: 0.2ms | Allocations: 3050)
+
+
+Started PATCH "/kegs/1" for 127.0.0.1 at 2019-12-03 17:19:48 -0500
+Processing by KegsController#update as JS
+  Parameters: {"authenticity_token"=>"ZRkWxduoiwEra7DteFsUgvmOxbAjDC0UWwrySPuqoBP3somwnKq/ESW5gJL/b70oLxz/FETYIvYGla9gCaoNSQ==", "keg"=>{"name"=>"", "type"=>""}, "commit"=>"Update Keg", "id"=>"1"}
+  [1m[36mKeg Load (0.2ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/edit.erb
+  Rendered kegs/edit.erb (Duration: 1.2ms | Allocations: 803)
+Completed 200 OK in 5ms (Views: 1.6ms | ActiveRecord: 0.2ms | Allocations: 3059)
+
+
+Started PATCH "/kegs/1" for 127.0.0.1 at 2019-12-03 17:19:48 -0500
+Processing by KegsController#update as JS
+  Parameters: {"authenticity_token"=>"ZRkWxduoiwEra7DteFsUgvmOxbAjDC0UWwrySPuqoBP3somwnKq/ESW5gJL/b70oLxz/FETYIvYGla9gCaoNSQ==", "keg"=>{"name"=>"", "type"=>""}, "commit"=>"Update Keg", "id"=>"1"}
+  [1m[36mKeg Load (0.1ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/edit.erb
+  Rendered kegs/edit.erb (Duration: 1.2ms | Allocations: 803)
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.1ms | Allocations: 3050)
+
+
+Started PATCH "/kegs/1" for 127.0.0.1 at 2019-12-03 17:19:48 -0500
+Processing by KegsController#update as JS
+  Parameters: {"authenticity_token"=>"ZRkWxduoiwEra7DteFsUgvmOxbAjDC0UWwrySPuqoBP3somwnKq/ESW5gJL/b70oLxz/FETYIvYGla9gCaoNSQ==", "keg"=>{"name"=>"", "type"=>""}, "commit"=>"Update Keg", "id"=>"1"}
+  [1m[36mKeg Load (0.1ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/edit.erb
+  Rendered kegs/edit.erb (Duration: 1.1ms | Allocations: 803)
+Completed 200 OK in 4ms (Views: 1.5ms | ActiveRecord: 0.1ms | Allocations: 3052)
+
+
+Started GET "/kegs/1/edit" for 127.0.0.1 at 2019-12-03 17:19:49 -0500
+Processing by KegsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mKeg Load (0.2ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/edit.erb within layouts/application
+  Rendered kegs/edit.erb within layouts/application (Duration: 1.8ms | Allocations: 789)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 13.9ms | ActiveRecord: 0.2ms | Allocations: 6079)
+
+
+Started PATCH "/kegs/1" for 127.0.0.1 at 2019-12-03 17:19:51 -0500
+Processing by KegsController#update as JS
+  Parameters: {"authenticity_token"=>"AzbqdDC7kpkVSivcQ+6UWqaQTRmhdGT5L21iE+/5WaSRnXUBd7mmiRuYG6PE2j3wcAJ3vcagaxty8j87Hfn0/g==", "keg"=>{"name"=>"1", "type"=>""}, "commit"=>"Update Keg", "id"=>"1"}
+  [1m[36mKeg Load (0.1ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+Redirected to http://127.0.0.1:3000/kegs/1
+Completed 200 OK in 2ms (ActiveRecord: 0.1ms | Allocations: 1268)
+
+
+Started GET "/kegs/1" for 127.0.0.1 at 2019-12-03 17:19:51 -0500
+Processing by KegsController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mKeg Load (0.4ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/show.erb within layouts/application
+  [1m[36mKegFloor Load (0.2ms)[0m  [1m[34mSELECT "keg_floors".* FROM "keg_floors" WHERE "keg_floors"."keg_id" = ?[0m  [["keg_id", 1]]
+  ↳ app/views/kegs/show.erb:5
+  Rendered kegs/show.erb within layouts/application (Duration: 8.0ms | Allocations: 2555)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 26ms (Views: 19.3ms | ActiveRecord: 0.9ms | Allocations: 7131)
+
+
+Started PATCH "/kegs/21" for 127.0.0.1 at 2019-12-03 17:20:08 -0500
+Processing by KegsController#update as JS
+  Parameters: {"authenticity_token"=>"z3HZseyGGWHx5Bjz54yD4uUUsXC+of6zj5GD2Y35RQVd2kbEq4Qtcf82KIxguCpIM4aL1Nl18VHSDt7xf/noXw==", "keg"=>{"name"=>"9999", "type"=>""}, "commit"=>"Update Keg", "id"=>"21"}
+  [1m[36mKeg Load (0.1ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/kegs_controller.rb:31:in `update'
+  [1m[36mKeg Update (0.5ms)[0m  [1m[33mUPDATE "kegs" SET "name" = ?, "updated_at" = ? WHERE "kegs"."id" = ?[0m  [["name", "9999"], ["updated_at", "2019-12-03 22:20:08.300266"], ["id", 21]]
+  ↳ app/controllers/kegs_controller.rb:31:in `update'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/kegs_controller.rb:31:in `update'
+Redirected to http://127.0.0.1:3000/kegs/21
+Completed 200 OK in 7ms (ActiveRecord: 1.6ms | Allocations: 3161)
+
+
+Started GET "/kegs/21" for 127.0.0.1 at 2019-12-03 17:20:08 -0500
+Processing by KegsController#show as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mKeg Load (0.2ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/show.erb within layouts/application
+  [1m[36mKegFloor Load (0.2ms)[0m  [1m[34mSELECT "keg_floors".* FROM "keg_floors" WHERE "keg_floors"."keg_id" = ?[0m  [["keg_id", 21]]
+  ↳ app/views/kegs/show.erb:5
+  Rendered kegs/show.erb within layouts/application (Duration: 3.0ms | Allocations: 666)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 22ms (Views: 19.1ms | ActiveRecord: 0.4ms | Allocations: 5200)
+
+
+Started GET "/kegs/21/edit" for 127.0.0.1 at 2019-12-03 17:20:13 -0500
+Processing by KegsController#edit as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mKeg Load (0.2ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/edit.erb within layouts/application
+  Rendered kegs/edit.erb within layouts/application (Duration: 1.6ms | Allocations: 790)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 11.3ms | ActiveRecord: 0.2ms | Allocations: 5321)
+
+
+Started PATCH "/kegs/21" for 127.0.0.1 at 2019-12-03 17:20:16 -0500
+Processing by KegsController#update as JS
+  Parameters: {"authenticity_token"=>"KQ6yWUsWN8XQM0DVK1AjXcvUU+iplv4neUKd+V9YD3q7pS0sDBQD1d7hcKqsZIr3HUZpTM5C8cUk3cDRrViiIA==", "keg"=>{"name"=>"", "type"=>""}, "commit"=>"Update Keg", "id"=>"21"}
+  [1m[36mKeg Load (0.1ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/edit.erb
+  Rendered kegs/edit.erb (Duration: 1.2ms | Allocations: 803)
+Completed 200 OK in 4ms (Views: 1.7ms | ActiveRecord: 0.1ms | Allocations: 3035)
+
+
+Started GET "/kegs/21/edit" for 127.0.0.1 at 2019-12-03 17:20:18 -0500
+Processing by KegsController#edit as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mKeg Load (0.2ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/edit.erb within layouts/application
+  Rendered kegs/edit.erb within layouts/application (Duration: 1.7ms | Allocations: 788)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 11.3ms | ActiveRecord: 0.2ms | Allocations: 5331)
+
+
+Started PATCH "/kegs/21" for 127.0.0.1 at 2019-12-03 17:22:47 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by KegsController#update as JS
+  Parameters: {"authenticity_token"=>"INjOWt5ZxIHfrr9BHpdOp+QY8JSdmglmPGB99XKqx3Syc1EvmVvwkdF8jz6Zo+cNMorKMPpOBoRh/yDdgKpqLg==", "keg"=>{"name"=>"", "type"=>""}, "commit"=>"Update Keg", "id"=>"21"}
+  [1m[36mKeg Load (0.1ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/edit.erb
+  Rendered kegs/edit.erb (Duration: 1.6ms | Allocations: 1095)
+Completed 200 OK in 17ms (Views: 3.7ms | ActiveRecord: 0.6ms | Allocations: 10339)
+
+
+Started PATCH "/kegs/21" for 127.0.0.1 at 2019-12-03 17:22:48 -0500
+Processing by KegsController#update as JS
+  Parameters: {"authenticity_token"=>"INjOWt5ZxIHfrr9BHpdOp+QY8JSdmglmPGB99XKqx3Syc1EvmVvwkdF8jz6Zo+cNMorKMPpOBoRh/yDdgKpqLg==", "keg"=>{"name"=>"", "type"=>""}, "commit"=>"Update Keg", "id"=>"21"}
+  [1m[36mKeg Load (0.1ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/edit.erb
+  Rendered kegs/edit.erb (Duration: 1.2ms | Allocations: 803)
+Completed 200 OK in 5ms (Views: 1.7ms | ActiveRecord: 0.1ms | Allocations: 3053)
+
+
+Started PATCH "/kegs/21" for 127.0.0.1 at 2019-12-03 17:22:49 -0500
+Processing by KegsController#update as JS
+  Parameters: {"authenticity_token"=>"INjOWt5ZxIHfrr9BHpdOp+QY8JSdmglmPGB99XKqx3Syc1EvmVvwkdF8jz6Zo+cNMorKMPpOBoRh/yDdgKpqLg==", "keg"=>{"name"=>"", "type"=>""}, "commit"=>"Update Keg", "id"=>"21"}
+  [1m[36mKeg Load (0.1ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/edit.erb
+  Rendered kegs/edit.erb (Duration: 1.1ms | Allocations: 803)
+Completed 200 OK in 4ms (Views: 1.6ms | ActiveRecord: 0.1ms | Allocations: 3056)
+
+
+Started PATCH "/kegs/21" for 127.0.0.1 at 2019-12-03 17:22:49 -0500
+Processing by KegsController#update as JS
+  Parameters: {"authenticity_token"=>"INjOWt5ZxIHfrr9BHpdOp+QY8JSdmglmPGB99XKqx3Syc1EvmVvwkdF8jz6Zo+cNMorKMPpOBoRh/yDdgKpqLg==", "keg"=>{"name"=>"", "type"=>""}, "commit"=>"Update Keg", "id"=>"21"}
+  [1m[36mKeg Load (0.1ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/edit.erb
+  Rendered kegs/edit.erb (Duration: 1.1ms | Allocations: 803)
+Completed 200 OK in 4ms (Views: 1.5ms | ActiveRecord: 0.1ms | Allocations: 3056)
+
+
+Started PATCH "/kegs/21" for 127.0.0.1 at 2019-12-03 17:22:49 -0500
+Processing by KegsController#update as JS
+  Parameters: {"authenticity_token"=>"INjOWt5ZxIHfrr9BHpdOp+QY8JSdmglmPGB99XKqx3Syc1EvmVvwkdF8jz6Zo+cNMorKMPpOBoRh/yDdgKpqLg==", "keg"=>{"name"=>"", "type"=>""}, "commit"=>"Update Keg", "id"=>"21"}
+  [1m[36mKeg Load (0.1ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/edit.erb
+  Rendered kegs/edit.erb (Duration: 1.1ms | Allocations: 803)
+Completed 200 OK in 4ms (Views: 1.5ms | ActiveRecord: 0.1ms | Allocations: 3050)
+
+
+Started PATCH "/kegs/21" for 127.0.0.1 at 2019-12-03 17:22:50 -0500
+Processing by KegsController#update as JS
+  Parameters: {"authenticity_token"=>"INjOWt5ZxIHfrr9BHpdOp+QY8JSdmglmPGB99XKqx3Syc1EvmVvwkdF8jz6Zo+cNMorKMPpOBoRh/yDdgKpqLg==", "keg"=>{"name"=>"", "type"=>""}, "commit"=>"Update Keg", "id"=>"21"}
+  [1m[36mKeg Load (0.2ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/edit.erb
+  Rendered kegs/edit.erb (Duration: 1.2ms | Allocations: 803)
+Completed 200 OK in 6ms (Views: 1.8ms | ActiveRecord: 0.2ms | Allocations: 3052)
+
+
+Started GET "/kegs/21/edit" for 127.0.0.1 at 2019-12-03 17:22:53 -0500
+Processing by KegsController#edit as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mKeg Load (0.1ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/edit.erb within layouts/application
+  Rendered kegs/edit.erb within layouts/application (Duration: 1.0ms | Allocations: 789)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 13.2ms | ActiveRecord: 0.1ms | Allocations: 6082)
+
+
+Started GET "/kegs/21/edit" for 127.0.0.1 at 2019-12-03 17:22:55 -0500
+Processing by KegsController#edit as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mKeg Load (0.2ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/edit.erb within layouts/application
+  Rendered kegs/edit.erb within layouts/application (Duration: 1.3ms | Allocations: 790)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 10.6ms | ActiveRecord: 0.2ms | Allocations: 5324)
+
+
+Started GET "/kegs/21/edit" for 127.0.0.1 at 2019-12-03 17:22:57 -0500
+Processing by KegsController#edit as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mKeg Load (0.2ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/edit.erb within layouts/application
+  Rendered kegs/edit.erb within layouts/application (Duration: 1.6ms | Allocations: 784)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 11.0ms | ActiveRecord: 0.2ms | Allocations: 5319)
+
+
+Started GET "/kegs/21/edit" for 127.0.0.1 at 2019-12-03 17:22:59 -0500
+Processing by KegsController#edit as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mKeg Load (0.1ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/edit.erb within layouts/application
+  Rendered kegs/edit.erb within layouts/application (Duration: 1.5ms | Allocations: 784)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.1ms | Allocations: 5311)
+
+
+Started GET "/kegs/21/edit" for 127.0.0.1 at 2019-12-03 17:23:00 -0500
+Processing by KegsController#edit as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mKeg Load (0.1ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/edit.erb within layouts/application
+  Rendered kegs/edit.erb within layouts/application (Duration: 1.8ms | Allocations: 784)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 11.3ms | ActiveRecord: 0.1ms | Allocations: 5314)
+
+
+Started PATCH "/kegs/21" for 127.0.0.1 at 2019-12-03 17:23:23 -0500
+Processing by KegsController#update as JS
+  Parameters: {"authenticity_token"=>"QYfl300gfaExej3LtnVjzAPKFKdORRUmiwjRPrQqGvXTLHqqCiJJsT+oDbQxQcpm1VguAymRGsTWl4wWRiq3rw==", "keg"=>{"name"=>"", "type"=>""}, "commit"=>"Update Keg", "id"=>"21"}
+  [1m[36mKeg Load (0.1ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/edit.erb
+  Rendered kegs/edit.erb (Duration: 1.8ms | Allocations: 803)
+Completed 200 OK in 5ms (Views: 2.4ms | ActiveRecord: 0.1ms | Allocations: 3038)
+
+
+Started GET "/kegs/21/edit" for 127.0.0.1 at 2019-12-03 17:23:28 -0500
+Processing by KegsController#edit as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mKeg Load (0.2ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/edit.erb within layouts/application
+  Rendered kegs/edit.erb within layouts/application (Duration: 1.2ms | Allocations: 788)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 11ms (Views: 8.9ms | ActiveRecord: 0.2ms | Allocations: 5334)
+
+
+Started GET "/kegs/21/edit" for 127.0.0.1 at 2019-12-03 17:23:34 -0500
+Processing by KegsController#edit as HTML
+  Parameters: {"id"=>"21"}
+  [1m[36mKeg Load (0.2ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 21], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/edit.erb within layouts/application
+  Rendered kegs/edit.erb within layouts/application (Duration: 1.6ms | Allocations: 784)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 9.8ms | ActiveRecord: 0.2ms | Allocations: 5312)
+
+
+Started GET "/kegs/23/edit" for 127.0.0.1 at 2019-12-03 17:24:18 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by KegsController#edit as HTML
+  Parameters: {"id"=>"23"}
+  [1m[36mKeg Load (0.1ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 23], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+Completed 404 Not Found in 15ms (ActiveRecord: 0.6ms | Allocations: 5027)
+
+
+  
+ActiveRecord::RecordNotFound (Couldn't find Keg with 'id'=23):
+  
+app/controllers/kegs_controller.rb:47:in `find_keg'
+app/controllers/kegs_controller.rb:26:in `edit'
+Started GET "/kegs/20/edit" for 127.0.0.1 at 2019-12-03 17:24:21 -0500
+Processing by KegsController#edit as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mKeg Load (0.2ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/edit.erb within layouts/application
+  Rendered kegs/edit.erb within layouts/application (Duration: 81.8ms | Allocations: 180579)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 135ms (Views: 127.3ms | ActiveRecord: 0.2ms | Allocations: 192435)
+
+
+Started PATCH "/kegs/20" for 127.0.0.1 at 2019-12-03 17:24:24 -0500
+Processing by KegsController#update as JS
+  Parameters: {"authenticity_token"=>"n8jmhca6WV575IeuICZgOYob2HR111s5uYYlqnXsyHcNY3nwgbhtTnU2t9GnEsmTXIni0BIDVNvkGXiCh+xlLQ==", "keg"=>{"name"=>"", "type"=>""}, "commit"=>"Update Keg", "id"=>"20"}
+  [1m[36mKeg Load (0.1ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+Redirected to 
+Completed 500 Internal Server Error in 191ms (ActiveRecord: 0.1ms | Allocations: 101894)
+
+
+  
+NoMethodError (undefined method `edit_url' for #<KegsController:0x00007f8f848c4bf8>
+Did you mean?  edit_keg_url):
+  
+app/controllers/kegs_controller.rb:35:in `update'
+Started GET "/kegs/20/edit" for 127.0.0.1 at 2019-12-03 17:24:28 -0500
+Processing by KegsController#edit as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mKeg Load (0.2ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/edit.erb within layouts/application
+  Rendered kegs/edit.erb within layouts/application (Duration: 1.7ms | Allocations: 786)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 11.7ms | ActiveRecord: 0.2ms | Allocations: 5336)
+
+
+Started GET "/kegs/20/edit" for 127.0.0.1 at 2019-12-03 17:24:49 -0500
+Processing by KegsController#edit as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mKeg Load (0.1ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/edit.erb within layouts/application
+  Rendered kegs/edit.erb within layouts/application (Duration: 1.3ms | Allocations: 780)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 10.1ms | ActiveRecord: 0.1ms | Allocations: 5324)
+
+
+Started PATCH "/kegs/20" for 127.0.0.1 at 2019-12-03 17:24:57 -0500
+Processing by KegsController#update as JS
+  Parameters: {"authenticity_token"=>"tDHWg7lfZVzqBNlnCQipc5yFPxAh2XPobE/Lh9A4ZLgmmkn2/l1RTOTW6RiOPADZShcFtEYNfAox0JavIjjJ4g==", "keg"=>{"name"=>"", "type"=>""}, "commit"=>"Update Keg", "id"=>"20"}
+  [1m[36mKeg Load (0.1ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+Redirected to 
+Completed 500 Internal Server Error in 159ms (ActiveRecord: 0.1ms | Allocations: 101597)
+
+
+  
+NoMethodError (undefined method `edit_url' for #<KegsController:0x00007f8f817c44e0>
+Did you mean?  edit_keg_url):
+  
+app/controllers/kegs_controller.rb:35:in `update'
+Started GET "/kegs/20/edit" for 127.0.0.1 at 2019-12-03 17:25:01 -0500
+Processing by KegsController#edit as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mKeg Load (0.2ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/edit.erb within layouts/application
+  Rendered kegs/edit.erb within layouts/application (Duration: 1.3ms | Allocations: 779)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 10.0ms | ActiveRecord: 0.2ms | Allocations: 5308)
+
+
+Started GET "/kegs/19/edit" for 127.0.0.1 at 2019-12-03 17:25:26 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by KegsController#edit as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mKeg Load (0.3ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/edit.erb within layouts/application
+  Rendered kegs/edit.erb within layouts/application (Duration: 2.1ms | Allocations: 842)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 31ms (Views: 13.6ms | ActiveRecord: 1.2ms | Allocations: 11273)
+
+
+Started PATCH "/kegs/19" for 127.0.0.1 at 2019-12-03 17:25:30 -0500
+Processing by KegsController#update as JS
+  Parameters: {"authenticity_token"=>"Cdi5mI+5z+jn/CV16SsGZbrnxF2glFrwN8KddbGqKsmbcybtyLv7+OkuFQpuH6/PbHX++cdAVRJqXcBdQ6qHkw==", "keg"=>{"name"=>"", "type"=>""}, "commit"=>"Update Keg", "id"=>"19"}
+  [1m[36mKeg Load (0.2ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+Redirected to http://127.0.0.1:3000/kegs/19/edit
+Completed 200 OK in 5ms (ActiveRecord: 0.2ms | Allocations: 2287)
+
+
+Started GET "/kegs/19/edit" for 127.0.0.1 at 2019-12-03 17:25:30 -0500
+Processing by KegsController#edit as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mKeg Load (0.4ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/edit.erb within layouts/application
+  Rendered kegs/edit.erb within layouts/application (Duration: 4.0ms | Allocations: 783)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 27ms (Views: 23.1ms | ActiveRecord: 0.4ms | Allocations: 5329)
+
+
+Started PATCH "/kegs/19" for 127.0.0.1 at 2019-12-03 17:29:22 -0500
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by KegsController#update as JS
+  Parameters: {"authenticity_token"=>"TMxsy/oywkxpq/zLMftOd62yoMs0OarSdh+6n+IOWrebfOpHvuScw2dpbV7hI4rLKoWDORZYNzfr8z6VYqczFw==", "keg"=>{"name"=>"0", "type"=>""}, "commit"=>"Update Keg", "id"=>"19"}
+  [1m[36mKeg Load (0.2ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/kegs_controller.rb:31:in `update'
+  [1m[36mKeg Update (0.4ms)[0m  [1m[33mUPDATE "kegs" SET "name" = ?, "type" = ?, "updated_at" = ? WHERE "kegs"."id" = ?[0m  [["name", "0"], ["type", ""], ["updated_at", "2019-12-03 22:29:22.154995"], ["id", 19]]
+  ↳ app/controllers/kegs_controller.rb:31:in `update'
+  [1m[35m (0.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/kegs_controller.rb:31:in `update'
+Redirected to http://127.0.0.1:3000/kegs/19
+Completed 200 OK in 17ms (ActiveRecord: 2.0ms | Allocations: 9119)
+
+
+Started GET "/kegs/19" for 127.0.0.1 at 2019-12-03 17:29:22 -0500
+Processing by KegsController#show as HTML
+  Parameters: {"id"=>"19"}
+  [1m[36mKeg Load (0.2ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 19], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/show.erb within layouts/application
+  [1m[36mKegFloor Load (0.2ms)[0m  [1m[34mSELECT "keg_floors".* FROM "keg_floors" WHERE "keg_floors"."keg_id" = ?[0m  [["keg_id", 19]]
+  ↳ app/views/kegs/show.erb:5
+  Rendered kegs/show.erb within layouts/application (Duration: 14.8ms | Allocations: 4376)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 25ms (Views: 22.2ms | ActiveRecord: 0.7ms | Allocations: 9107)
+
+
+Started PATCH "/kegs/20" for 127.0.0.1 at 2019-12-03 17:29:26 -0500
+Processing by KegsController#update as JS
+  Parameters: {"authenticity_token"=>"PvpWEdWscSbP517fND7nTlJH65+1Q9AZuAL64wI7wy6sUclkkq5FNsE1bqCzCk7khNXRO9KX3/vlnafL8DtudA==", "keg"=>{"name"=>"", "type"=>""}, "commit"=>"Update Keg", "id"=>"20"}
+  [1m[36mKeg Load (0.1ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+Redirected to http://127.0.0.1:3000/kegs/20/edit
+Completed 200 OK in 3ms (ActiveRecord: 0.1ms | Allocations: 2251)
+
+
+Started GET "/kegs/20/edit" for 127.0.0.1 at 2019-12-03 17:29:26 -0500
+Processing by KegsController#edit as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mKeg Load (0.1ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/edit.erb within layouts/application
+  Rendered kegs/edit.erb within layouts/application (Duration: 4.9ms | Allocations: 791)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 20ms (Views: 17.1ms | ActiveRecord: 0.1ms | Allocations: 5340)
+
+
+Started PATCH "/kegs/20" for 127.0.0.1 at 2019-12-03 17:29:31 -0500
+Processing by KegsController#update as JS
+  Parameters: {"authenticity_token"=>"G4sse/yuYhmrrSMB2UqeHwMXRO1BLgdTJpxRQztH1USHBvI0rkAi6WY+8KvkWTxthVJrzfnr0cU+YdVtGWjrNQ==", "keg"=>{"name"=>"", "type"=>""}, "commit"=>"Update Keg", "id"=>"20"}
+  [1m[36mKeg Load (0.1ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+Redirected to http://127.0.0.1:3000/kegs/20/edit
+Completed 200 OK in 3ms (ActiveRecord: 0.1ms | Allocations: 2222)
+
+
+Started GET "/kegs/20/edit" for 127.0.0.1 at 2019-12-03 17:29:31 -0500
+Processing by KegsController#edit as HTML
+  Parameters: {"id"=>"20"}
+  [1m[36mKeg Load (0.2ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 20], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/edit.erb within layouts/application
+  Rendered kegs/edit.erb within layouts/application (Duration: 1.5ms | Allocations: 783)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 19ms (Views: 16.2ms | ActiveRecord: 0.2ms | Allocations: 5323)
+
+
+Started GET "/kegs/new" for 127.0.0.1 at 2019-12-03 17:31:16 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by KegsController#new as HTML
+  Rendering kegs/new.erb within layouts/application
+  Rendered kegs/new.erb within layouts/application (Duration: 76.2ms | Allocations: 180697)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 126ms (Views: 98.3ms | ActiveRecord: 1.8ms | Allocations: 196037)
+
+
+Started POST "/kegs" for 127.0.0.1 at 2019-12-03 17:31:18 -0500
+Processing by KegsController#create as JS
+  Parameters: {"authenticity_token"=>"iuvGooHYyB+D8frgZJdEcUVWKcm7sjbPyX3jAZDElqAYQFnXxtr8D40jyp/jo+3bk8QTbdxmOS2U4r4pYsQ7+g==", "keg"=>{"name"=>"", "type"=>""}, "commit"=>"Create Keg"}
+Redirected to http://127.0.0.1:3000/kegs/new
+Completed 200 OK in 4ms (ActiveRecord: 0.0ms | Allocations: 1726)
+
+
+Started GET "/kegs/new" for 127.0.0.1 at 2019-12-03 17:31:18 -0500
+Processing by KegsController#new as HTML
+  Rendering kegs/new.erb within layouts/application
+  Rendered kegs/new.erb within layouts/application (Duration: 3.2ms | Allocations: 773)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 14.7ms | ActiveRecord: 0.0ms | Allocations: 4835)
+
+
+Started POST "/kegs" for 127.0.0.1 at 2019-12-03 17:31:23 -0500
+Processing by KegsController#create as JS
+  Parameters: {"authenticity_token"=>"p08M8v83XkwDPWf+DzTXn+To1ZZJ7qQbN4giZIpWDFgDT/sqS/ng8Fn+rkG3cpH5MjAI9cWToc3lIylCqovwbQ==", "keg"=>{"name"=>"", "type"=>"3333"}, "commit"=>"Create Keg"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 989)
+
+
+  
+ActiveRecord::SubclassNotFound (The single-table inheritance mechanism failed to locate the subclass: '3333'. This error is raised because the column 'type' is reserved for storing the class in case of inheritance. Please rename this column if you didn't intend it to be used for storing the inheritance class or overwrite Keg.inheritance_column to use another column for that information.):
+  
+app/controllers/kegs_controller.rb:16:in `create'
+Started POST "/kegs" for 127.0.0.1 at 2019-12-03 17:31:25 -0500
+Processing by KegsController#create as JS
+  Parameters: {"authenticity_token"=>"p08M8v83XkwDPWf+DzTXn+To1ZZJ7qQbN4giZIpWDFgDT/sqS/ng8Fn+rkG3cpH5MjAI9cWToc3lIylCqovwbQ==", "keg"=>{"name"=>"", "type"=>"3333"}, "commit"=>"Create Keg"}
+Completed 500 Internal Server Error in 1ms (ActiveRecord: 0.0ms | Allocations: 997)
+
+
+  
+ActiveRecord::SubclassNotFound (The single-table inheritance mechanism failed to locate the subclass: '3333'. This error is raised because the column 'type' is reserved for storing the class in case of inheritance. Please rename this column if you didn't intend it to be used for storing the inheritance class or overwrite Keg.inheritance_column to use another column for that information.):
+  
+app/controllers/kegs_controller.rb:16:in `create'
+Started GET "/kegs/new" for 127.0.0.1 at 2019-12-03 17:34:15 -0500
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by KegsController#new as HTML
+  Rendering kegs/new.erb within layouts/application
+  Rendered kegs/new.erb within layouts/application (Duration: 80.0ms | Allocations: 180697)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 132ms (Views: 104.4ms | ActiveRecord: 0.6ms | Allocations: 196245)
+
+
+Started GET "/kegs/3" for 127.0.0.1 at 2019-12-03 17:34:20 -0500
+Processing by KegsController#show as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mKeg Load (0.3ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/show.erb within layouts/application
+  [1m[36mKegFloor Load (0.7ms)[0m  [1m[34mSELECT "keg_floors".* FROM "keg_floors" WHERE "keg_floors"."keg_id" = ?[0m  [["keg_id", 3]]
+  ↳ app/views/kegs/show.erb:5
+  Rendered kegs/show.erb within layouts/application (Duration: 18.9ms | Allocations: 4447)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 32ms (Views: 26.6ms | ActiveRecord: 1.5ms | Allocations: 9511)
+
+
+Started GET "/kegs/3/edit" for 127.0.0.1 at 2019-12-03 17:34:23 -0500
+Processing by KegsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mKeg Load (0.2ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/edit.erb within layouts/application
+  Rendered kegs/edit.erb within layouts/application (Duration: 2.4ms | Allocations: 1155)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 11.3ms | ActiveRecord: 0.2ms | Allocations: 5839)
+
+
+Started GET "/kegs/3/edit" for 127.0.0.1 at 2019-12-03 17:34:36 -0500
+Processing by KegsController#edit as HTML
+  Parameters: {"id"=>"3"}
+  [1m[36mKeg Load (0.1ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/edit.erb within layouts/application
+  Rendered kegs/edit.erb within layouts/application (Duration: 3.9ms | Allocations: 1188)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 11.5ms | ActiveRecord: 0.1ms | Allocations: 6672)
+
+
+Started DELETE "/kegs/3" for 127.0.0.1 at 2019-12-03 17:34:39 -0500
+Processing by KegsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ipNcT+Qklnb4Q4Je9URX+rBLVk+Y3hfyEpTbaV3VtsMYOMM6oyaiZvaRsiFycP5QZtls6/8KGBBPC4ZBr9UbmQ==", "id"=>"3"}
+  [1m[36mKeg Load (0.2ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 3], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/kegs_controller.rb:41:in `destroy'
+  [1m[36mKeg Destroy (0.4ms)[0m  [1m[31mDELETE FROM "kegs" WHERE "kegs"."id" = ?[0m  [["id", 3]]
+  ↳ app/controllers/kegs_controller.rb:41:in `destroy'
+  [1m[35m (2.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/kegs_controller.rb:41:in `destroy'
+Redirected to http://127.0.0.1:3000/kegs
+Completed 302 Found in 10ms (ActiveRecord: 2.8ms | Allocations: 2570)
+
+
+Started GET "/kegs" for 127.0.0.1 at 2019-12-03 17:34:39 -0500
+Processing by KegsController#index as HTML
+  Rendering kegs/index.erb within layouts/application
+  [1m[36mKeg Load (0.2ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs"[0m
+  ↳ app/views/kegs/index.erb:4
+  Rendered kegs/index.erb within layouts/application (Duration: 2.6ms | Allocations: 1644)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 10.3ms | ActiveRecord: 0.2ms | Allocations: 5828)
+
+
+Started GET "/kegs/1/edit" for 127.0.0.1 at 2019-12-03 17:34:47 -0500
+Processing by KegsController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mKeg Load (0.2ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/edit.erb within layouts/application
+  Rendered kegs/edit.erb within layouts/application (Duration: 1.8ms | Allocations: 858)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 14ms (Views: 11.6ms | ActiveRecord: 0.2ms | Allocations: 5388)
+
+
+Started DELETE "/kegs/1" for 127.0.0.1 at 2019-12-03 17:34:50 -0500
+Processing by KegsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"Nelhv1fhR06F/Ng0jM2Xurg9DvaNn/MAe1DClBnFMvenQv7KEONzXosu6EsL+T4Qbq80UupL/OImz5+868WfrQ==", "id"=>"1"}
+  [1m[36mKeg Load (0.1ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/kegs_controller.rb:41:in `destroy'
+  [1m[36mKeg Destroy (0.6ms)[0m  [1m[31mDELETE FROM "kegs" WHERE "kegs"."id" = ?[0m  [["id", 1]]
+  ↳ app/controllers/kegs_controller.rb:41:in `destroy'
+  [1m[35m (3.0ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/kegs_controller.rb:41:in `destroy'
+Redirected to http://127.0.0.1:3000/kegs
+Completed 302 Found in 12ms (ActiveRecord: 3.8ms | Allocations: 2497)
+
+
+Started GET "/kegs" for 127.0.0.1 at 2019-12-03 17:34:50 -0500
+Processing by KegsController#index as HTML
+  Rendering kegs/index.erb within layouts/application
+  [1m[36mKeg Load (0.3ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs"[0m
+  ↳ app/views/kegs/index.erb:4
+  Rendered kegs/index.erb within layouts/application (Duration: 6.3ms | Allocations: 1438)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 15ms (Views: 14.5ms | ActiveRecord: 0.3ms | Allocations: 5477)
+
+
+Started GET "/kegs/2" for 127.0.0.1 at 2019-12-03 17:35:09 -0500
+Processing by KegsController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mKeg Load (0.2ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/show.erb within layouts/application
+  [1m[36mKegFloor Load (0.4ms)[0m  [1m[34mSELECT "keg_floors".* FROM "keg_floors" WHERE "keg_floors"."keg_id" = ?[0m  [["keg_id", 2]]
+  ↳ app/views/kegs/show.erb:5
+  Rendered kegs/show.erb within layouts/application (Duration: 4.6ms | Allocations: 897)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 21ms (Views: 16.8ms | ActiveRecord: 0.6ms | Allocations: 6356)
+
+
+Started GET "/kegs/2/edit" for 127.0.0.1 at 2019-12-03 17:35:14 -0500
+Processing by KegsController#edit as HTML
+  Parameters: {"id"=>"2"}
+  [1m[36mKeg Load (0.2ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/edit.erb within layouts/application
+  Rendered kegs/edit.erb within layouts/application (Duration: 2.8ms | Allocations: 1190)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 13.1ms | ActiveRecord: 0.2ms | Allocations: 5860)
+
+
+Started DELETE "/kegs/2" for 127.0.0.1 at 2019-12-03 17:35:22 -0500
+Processing by KegsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"IbD8q0mFJtN0ZEJGmJoB5BTQUTQ/t/C/zv4FSQA2ot2zG2PeDocSw3q2cjkfrqhOwkJrkFhj/12TYVhh8jYPhw==", "id"=>"2"}
+  [1m[36mKeg Load (0.1ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/kegs_controller.rb:41:in `destroy'
+  [1m[36mKeg Destroy (0.7ms)[0m  [1m[31mDELETE FROM "kegs" WHERE "kegs"."id" = ?[0m  [["id", 2]]
+  ↳ app/controllers/kegs_controller.rb:41:in `destroy'
+  [1m[35m (3.3ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/kegs_controller.rb:41:in `destroy'
+Redirected to http://127.0.0.1:3000/kegs
+Completed 302 Found in 11ms (ActiveRecord: 4.2ms | Allocations: 2498)
+
+
+Started GET "/kegs" for 127.0.0.1 at 2019-12-03 17:35:22 -0500
+Processing by KegsController#index as HTML
+  Rendering kegs/index.erb within layouts/application
+  [1m[36mKeg Load (0.3ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs"[0m
+  ↳ app/views/kegs/index.erb:4
+  Rendered kegs/index.erb within layouts/application (Duration: 4.0ms | Allocations: 1530)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.3ms | Allocations: 5700)
+
+
+Started GET "/kegs/4" for 127.0.0.1 at 2019-12-03 17:37:06 -0500
+Processing by KegsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mKeg Load (0.2ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/show.erb within layouts/application
+  [1m[36mKegFloor Load (0.1ms)[0m  [1m[34mSELECT "keg_floors".* FROM "keg_floors" WHERE "keg_floors"."keg_id" = ?[0m  [["keg_id", 4]]
+  ↳ app/views/kegs/show.erb:5
+  Rendered kegs/show.erb within layouts/application (Duration: 2.6ms | Allocations: 940)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 31ms (Views: 27.5ms | ActiveRecord: 0.3ms | Allocations: 6399)
+
+
+Started GET "/kegs/4" for 127.0.0.1 at 2019-12-03 17:37:12 -0500
+Processing by KegsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mKeg Load (0.1ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/show.erb within layouts/application
+  [1m[36mKegFloor Load (0.2ms)[0m  [1m[34mSELECT "keg_floors".* FROM "keg_floors" WHERE "keg_floors"."keg_id" = ?[0m  [["keg_id", 4]]
+  ↳ app/views/kegs/show.erb:5
+  Rendered kegs/show.erb within layouts/application (Duration: 2.7ms | Allocations: 939)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 13.5ms | ActiveRecord: 0.3ms | Allocations: 6393)
+
+
+Started GET "/kegs" for 127.0.0.1 at 2019-12-03 17:37:14 -0500
+Processing by KegsController#index as HTML
+  Rendering kegs/index.erb within layouts/application
+  [1m[36mKeg Load (0.2ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs"[0m
+  ↳ app/views/kegs/index.erb:4
+  Rendered kegs/index.erb within layouts/application (Duration: 4.2ms | Allocations: 1531)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 18ms (Views: 16.5ms | ActiveRecord: 0.2ms | Allocations: 5706)
+
+
+Started GET "/kegs/4" for 127.0.0.1 at 2019-12-03 17:37:14 -0500
+Processing by KegsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mKeg Load (0.1ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/show.erb within layouts/application
+  [1m[36mKegFloor Load (0.3ms)[0m  [1m[34mSELECT "keg_floors".* FROM "keg_floors" WHERE "keg_floors"."keg_id" = ?[0m  [["keg_id", 4]]
+  ↳ app/views/kegs/show.erb:5
+  Rendered kegs/show.erb within layouts/application (Duration: 2.2ms | Allocations: 736)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 10.8ms | ActiveRecord: 0.4ms | Allocations: 5271)
+
+
+Started GET "/kegs/4/edit" for 127.0.0.1 at 2019-12-03 17:37:15 -0500
+Processing by KegsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mKeg Load (0.1ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/edit.erb within layouts/application
+  Rendered kegs/edit.erb within layouts/application (Duration: 1.6ms | Allocations: 1188)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 10.9ms | ActiveRecord: 0.1ms | Allocations: 5858)
+
+
+Started GET "/kegs" for 127.0.0.1 at 2019-12-03 17:37:19 -0500
+Processing by KegsController#index as HTML
+  Rendering kegs/index.erb within layouts/application
+  [1m[36mKeg Load (0.2ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs"[0m
+  ↳ app/views/kegs/index.erb:4
+  Rendered kegs/index.erb within layouts/application (Duration: 3.0ms | Allocations: 1393)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 12ms (Views: 10.8ms | ActiveRecord: 0.2ms | Allocations: 5434)
+
+
+Started GET "/kegs/4" for 127.0.0.1 at 2019-12-03 17:37:21 -0500
+Processing by KegsController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mKeg Load (0.2ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/show.erb within layouts/application
+  [1m[36mKegFloor Load (0.1ms)[0m  [1m[34mSELECT "keg_floors".* FROM "keg_floors" WHERE "keg_floors"."keg_id" = ?[0m  [["keg_id", 4]]
+  ↳ app/views/kegs/show.erb:5
+  Rendered kegs/show.erb within layouts/application (Duration: 1.6ms | Allocations: 736)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 16ms (Views: 13.6ms | ActiveRecord: 0.3ms | Allocations: 5263)
+
+
+Started GET "/kegs/4/edit" for 127.0.0.1 at 2019-12-03 17:37:22 -0500
+Processing by KegsController#edit as HTML
+  Parameters: {"id"=>"4"}
+  [1m[36mKeg Load (0.2ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  Rendering kegs/edit.erb within layouts/application
+  Rendered kegs/edit.erb within layouts/application (Duration: 2.4ms | Allocations: 850)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 17ms (Views: 15.1ms | ActiveRecord: 0.2ms | Allocations: 5378)
+
+
+Started DELETE "/kegs/4" for 127.0.0.1 at 2019-12-03 17:37:26 -0500
+Processing by KegsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"G8VtNSrzHKjIyZmqA4+HpLivRFz+fbAPJ/Ph0MAMB2qJbvJAbfEouMYbqdWEuy4Obj1++Jmpv+16bLz4MgyqMA==", "id"=>"4"}
+  [1m[36mKeg Load (0.1ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs" WHERE "kegs"."id" = ? LIMIT ?[0m  [["id", 4], ["LIMIT", 1]]
+  ↳ app/controllers/kegs_controller.rb:47:in `find_keg'
+  [1m[35m (0.0ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/kegs_controller.rb:41:in `destroy'
+  [1m[36mKeg Destroy (0.2ms)[0m  [1m[31mDELETE FROM "kegs" WHERE "kegs"."id" = ?[0m  [["id", 4]]
+  ↳ app/controllers/kegs_controller.rb:41:in `destroy'
+  [1m[35m (2.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/kegs_controller.rb:41:in `destroy'
+Redirected to http://127.0.0.1:3000/kegs
+Completed 302 Found in 7ms (ActiveRecord: 2.6ms | Allocations: 2492)
+
+
+Started GET "/kegs" for 127.0.0.1 at 2019-12-03 17:37:26 -0500
+Processing by KegsController#index as HTML
+  Rendering kegs/index.erb within layouts/application
+  [1m[36mKeg Load (0.2ms)[0m  [1m[34mSELECT "kegs".* FROM "kegs"[0m
+  ↳ app/views/kegs/index.erb:4
+  Rendered kegs/index.erb within layouts/application (Duration: 2.3ms | Allocations: 1347)
+[Webpacker] Everything's up-to-date. Nothing to do
+Completed 200 OK in 13ms (Views: 11.7ms | ActiveRecord: 0.2ms | Allocations: 5390)
+
+
